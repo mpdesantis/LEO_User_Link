@@ -4,7 +4,7 @@
 * Date: 2025/03/02
 
 ## Description
-Discrete Event System Specification (DEVS) Model and Simulation of a Low Earth Orbit (LEO) User Link (UL).
+Discrete Event System Specification (DEVS) Model and Simulation of a Low Earth Orbit (LEO) User Link (UL). For additional information, please see `docs/`.
 
 ## Contents
 This repository's contents.
@@ -46,32 +46,31 @@ This repository's contents.
 Usage instructions for this repository.
 
 ### Build
-In order to compile this repository's source code, your system must have the [Cadmium](https://github.com/SimulationEverywhere/cadmium`) headers-only library available on your system. In order to use the existing build instructions without alteration, it is recommended to install Cadmium in a directory adjacent to this one, as per the following procedure.
-1. 
-1. Clone the Cadmium repository:
+In order to compile this repository's source code, your system must have the [Cadmium](https://github.com/SimulationEverywhere/cadmium`) headers-only library available on your system. This library, and its own dependencies, are included within this repository as a `git` submodule. To ensure that your system's submodules are up to date prior to compilation, issue the following command:
 ```sh
-# Via HTTPS
-git clone https://github.com/SimulationEverywhere/cadmium.git ../cadmium
-
-# Via SSH
-git clone git@github.com:SimulationEverywhere/cadmium.git ../cadmium
+git submodule update --init --recursive
 ```
 
 ### Including Cadmium in this Repository's Build Instructions
-If you have cloned the Cadmium library as per the above insructions, you should not need to modify the existing build instructions in this repository's `makefile`.
-Otherwise, you will need to explicitly set the include path within this repository's `makefile` as follows:
+If you have pulled in the Cadmium library as a `git` submodule as per the above insructions, you should not need to modify the existing build instructions in this repository's `makefile`.
+If you are not using this strategy, you will need to explicitly set the include path within this repository's `makefile` as follows, supplying your own paths for both the Cadmium library, as well as the DESTimes library that is itself a `git` submodule of the Cadmium repository.
 ```make
     INCLUDECADMIUM=-I <path-to>/cadmium/include
     INCLUDEDESTIMES=-I <path-to>/DESTimes/include
 ```
 
 ### Building the Project
-To compile the project and the tests, issue the following command:
+To compile the simulator and the tests, issue the following command:
 ```sh
-    make clean; make all
+make
+```
+To see additional `make` targets, issue the following command:
+```sh
+make help
 ```
 
 ### Executing Tests
+TODO
 3 - Run subnet test
     1 - Open the terminal in the bin folder. 
     2 - To run the test, type in the terminal "./NAME_OF_THE_COMPILED_FILE" (For windows, "./NAME_OF_THE_COMPILED_FILE.exe"). 
@@ -81,6 +80,7 @@ To compile the project and the tests, issue the following command:
 4 - To run receiver and sender tests you just need to select the proper executable name in step 3.2
 
 ### Executing the Top Model
+TODO
 5 - Run the top model
     1 - Open the terminal (Ubuntu terminal for Linux and Cygwin for Windows) in the bin folder.
     3 - To run the model, type in the terminal "./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE". For this test you need to type:
