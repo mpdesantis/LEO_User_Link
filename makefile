@@ -25,20 +25,27 @@ message.o: data_structures/message.cpp
 main_top.o: top_model/main.cpp
 	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) top_model/main.cpp -o build/main_top.o
 	
+# TODO: delete
 main_subnet_test.o: test/main_subnet_test.cpp
 	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) test/main_subnet_test.cpp -o build/main_subnet_test.o
 
+main_satellite_test.o: test/main_satellite_test.cpp
+	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) test/main_satellite_test.cpp -o build/main_satellite_test.o
+
+# TODO: delete
 main_sender_test.o: test/main_sender_test.cpp
 	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) test/main_sender_test.cpp -o build/main_sender_test.o
 
+# TODO: delete
 main_receiver_test.o: test/main_receiver_test.cpp
 	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) test/main_receiver_test.cpp -o build/main_receiver_test.o
 
 # Target to compile tests
 .PHONY: tests
-tests: main_subnet_test.o main_sender_test.o main_receiver_test.o message.o
+tests: main_subnet_test.o main_sender_test.o main_satellite_test.o main_receiver_test.o message.o
 		$(CC) -g -o bin/SUBNET_TEST build/main_subnet_test.o build/message.o
 		$(CC) -g -o bin/SENDER_TEST build/main_sender_test.o build/message.o 
+		$(CC) -g -o bin/satellite_test build/main_satellite_test.o build/message.o 
 		$(CC) -g -o bin/RECEIVER_TEST build/main_receiver_test.o build/message.o  
 
 # Target to compile simulator (ie. top model)
