@@ -1,43 +1,66 @@
-# Blank Cadmium Project (RT)
-|  Linux | Windows| ESP32 | MSP432 |
-|:--|:--|:--|:--|
-|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:question:|
-## Introduction
-This is a blank project that you can use as a template to start off your DEVS models. This project consits of a template atomic and coupled model.
+# README
+* Author: Michael De Santis
+* CUID: 101213450
+* Date: 2025/03/02
 
-## Dependencies
-This project assumes that you have Cadmium installed in a location accessible by the environment variable $CADMIUM.
-_This dependency would be met by default if you are using the ARSLAB servers. To check, try `echo $CADMIUM` in the terminal_
+## Description
+Discrete Event System Specification (DEVS) Model and Simulation of a Low Earth Orbit (LEO) User Link (UL). For additional information, please see the `doc/` directory.
 
-## Build
-To build this project, run:
+## Contents
+This repository's contents.
+
+* `bin/`
+    - Generated directory containing built executables for this repository.
+* `build/`
+    - Generated directory containing build files for this repository.
+* `build_sim.sh`
+    - Shell script defining build rules for host-architecture target.
+* `cadmium_v2/`
+    - Cadmium V2 repository `git` submodule.
+* `CMakeLists.txt`
+    - CMake build instructions for this repository.
+* `doc/`
+    - Directory containing documentation for this repository.
+        1. Report: `LEO_User_Link.pdf`
+        2. Assignment Document: `assignment1-DEVS.pdf`
+        3. Cadmium V2 Developer Manual: `cadmium-v2-developer-manual.pdf`
+        4. Cadmium V2 Installation Manual: `cadmium-v2-installation-manual.pdf`
+        5. DEVS Graphs Manual: `devs-graphs-manual.pdf`
+* `env.sh`
+    - Shell script defining additional environment variables for this repository.
+* `main`
+    - C++ Source and header files for this repository's code.
+    
+## Usage
+Usage instructions for this project and repository.
+
+### Installing and Configuring Cadmium V2
+In order to compile this repository's source code, your system must have [Cadmium V2](https://github.com/Sasisekhar/cadmium_v2) available on your system, and accessible via the environment variable `$CADMIUM`. This library, and its own dependencies, are included within this repository as a `git` submodule. To ensure that your system's submodules are up-to-date prior to compilation, issue the following command:
 ```sh
-source build_sim.sh
+git submodule update --init --recursive
 ```
-__NOTE__: Everytime you run build_sim.sh, the contents of `build/` and `bin/` will be replaced.
-
-To build this project for the ESP32, run:
+Once the `cadmium_v2` sudmodule directory is available on your file system, enter that directory and follow the instructions provided therein for installation and configuration.  Once complete, you should be able to verify that your configuration is correct with the output of the following command:
 ```sh
-source build_esp.sh
+$ echo $CADMIUM
+<path-to>/LEO_User_Link/cadmium_v2/include
 ```
-
-## Execute
-To run the project, run:
+If the above environment variable is discrepant on your system, you can overwrite it by sourcing `env.sh` in this directory with the following command:
 ```sh
-./bin/sample_project
+$ . env.sh
 ```
 
-To flash the project onto the esp32, run:
+### Build
+To build this project, issue the following command:
 ```sh
-idf.py -p $ESP_PORT flash
+$ . build_sim.sh
 ```
 
-## Modify
-You can modify this project per your requirement. Change the project name defined in the topmost CMakeLists.txt file here:
-```cmake
-set(projectName "sample_project")
+### Execute
+To execute this project, issue the following command:
+```sh
+./bin/leo_user_link
 ```
-If you want to add other include directories, add the following to the CMakeLists.txt file in the `main` directory:
-```cmake
-target_include_directories(${projectName} PRIVATE "/path/to/dependency")
-```
+
+## Notes
+* With permission and by instruction, this project uses the [blank project template](https://github.com:Sasisekhar/blank_project_rt) provided in the Cadmium V2 manual.
+* With permission and by instruction, this project is informed by the [sample project](https://github.com:Sasisekhar/DEVS_manual_example) provided in the Cadmium V2 manual.
