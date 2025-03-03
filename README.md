@@ -29,7 +29,7 @@ This repository's contents.
 * `env.sh`
     - Shell script defining additional environment variables for this repository.
 * `main`
-    - C++ Source and header files for this repository's code.
+    - C++ source and header files for this repository's code.
     
 ## Usage
 Usage instructions for this project and repository.
@@ -62,5 +62,5 @@ To execute this project, issue the following command:
 ```
 
 ## Notes
-* With permission and by instruction, this project uses the [blank project template](https://github.com:Sasisekhar/blank_project_rt) provided in the Cadmium V2 manual.
-* With permission and by instruction, this project is informed by the [sample project](https://github.com:Sasisekhar/DEVS_manual_example) provided in the Cadmium V2 manual.
+* With permission and by instruction, this project uses the [blank project template](https://github.com/Sasisekhar/blank_project_rt) provided in the Cadmium V2 manual.
+* With permission and by instruction, this project is informed by the [sample project](https://github.com/Sasisekhar/DEVS_manual_example) provided in the Cadmium V2 manual.
