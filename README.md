@@ -28,7 +28,7 @@ This repository's contents.
         5. DEVS Graphs Manual: `devs-graphs-manual.pdf`
 * `env.sh`
     - Shell script defining additional environment variables for this repository.
-* `main`
+* `main/`
     - C++ source and header files for this repository's code.
     
 ## Usage
