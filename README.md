@@ -30,6 +30,8 @@ This repository's contents.
     - Shell script defining additional environment variables for this repository.
 * `main/`
     - C++ source and header files for this repository's code.
+* `output/`
+    - Generated directory containing output logs from model simulation.
     
 ## Usage
 Usage instructions for this project and repository.

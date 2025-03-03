@@ -18,7 +18,7 @@ int main() {
 	// rootCoordinator.setLogger<STDOUTLogger>(";");
 
     // CSV file logging
-	rootCoordinator.setLogger<CSVLogger>("top_model_output.csv", ";");
+	rootCoordinator.setLogger<CSVLogger>("output/top_model_output.csv", ";");
 
     // Start the root coordinator
 	rootCoordinator.start();

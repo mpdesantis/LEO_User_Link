@@ -42,6 +42,6 @@ run
 # artifacts
 **/build
 **/bin
-# simulation results
-**/simulation_results
+# simulation outputs
+output/*
 

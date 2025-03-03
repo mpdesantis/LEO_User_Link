@@ -1,5 +1,6 @@
 if [ -d "build" ]; then rm -Rf build; fi
 mkdir -p build
+mkdir -p output
 cd build || exit
 rm -rf *
 cmake .. -DSIM=ON
