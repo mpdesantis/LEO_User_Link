@@ -1,3 +1,6 @@
 [submodule "cadmium"]
 	path = cadmium
 	url = git@github.com:SimulationEverywhere/cadmium.git
+[submodule "cadmium_v2"]
+	path = cadmium_v2
+	url = https://github.com/Sasisekhar/cadmium_v2
