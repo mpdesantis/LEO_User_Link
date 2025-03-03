@@ -1,13 +1,19 @@
-/**
-* Cristina Ruiz Martin
-* ARSLab - Carleton University
-*
-* Subnet:
-* Cadmium implementation of CD++ Subnet atomic model
-*/
+/******************************************************************************
+ * idu.h
+ ******************************************************************************
+ * Outdoor Unit (ODU) atomic model.
+ *
+ * Note: Based on example work by Cristina Ruiz Martin, ARSLab - Carleton 
+ * University.
+ ******************************************************************************
+ * Author: M. De Santis
+ * CUID: 101213450
+ * Date: 2025/03/02
+ ******************************************************************************
+ */
 
-#ifndef _SUBNET_HPP__
-#define _SUBNET_HPP__
+#ifndef _ODU_HPP__
+#define _ODU_HPP__
 
 #include <cadmium/modeling/ports.hpp>
 #include <cadmium/modeling/message_bag.hpp>
@@ -91,4 +97,4 @@ template<typename TIME> class Subnet{
         return os;
     }
 };    
-#endif // _SUBNET_HPP__
+#endif // _ODU_HPP__

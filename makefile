@@ -24,34 +24,36 @@ message.o: data_structures/message.cpp
 
 main_top.o: top_model/main.cpp
 	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) top_model/main.cpp -o build/main_top.o
-	
-# TODO: delete
-main_subnet_test.o: test/main_subnet_test.cpp
-	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) test/main_subnet_test.cpp -o build/main_subnet_test.o
+
+.PHONY: idu
+idu: main_idu_test.o
+
+main_idu_test.o: test/main_idu_test.cpp
+	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) test/main_idu_test.cpp -o build/main_idu_test.o
+
+.PHONY: odu
+odu: main_odu_test.o
+
+main_odu_test.o: test/main_odu_test.cpp
+	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) test/main_odu_test.cpp -o build/main_odu_test.o
+
+.PHONY: satellite
+satellite: main_satellite_test.o
 
 main_satellite_test.o: test/main_satellite_test.cpp
 	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) test/main_satellite_test.cpp -o build/main_satellite_test.o
 
-# TODO: delete
-main_sender_test.o: test/main_sender_test.cpp
-	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) test/main_sender_test.cpp -o build/main_sender_test.o
-
-# TODO: delete
-main_receiver_test.o: test/main_receiver_test.cpp
-	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) $(INCLUDEDESTIMES) test/main_receiver_test.cpp -o build/main_receiver_test.o
-
 # Target to compile tests
 .PHONY: tests
-tests: main_subnet_test.o main_sender_test.o main_satellite_test.o main_receiver_test.o message.o
-		$(CC) -g -o bin/SUBNET_TEST build/main_subnet_test.o build/message.o
-		$(CC) -g -o bin/SENDER_TEST build/main_sender_test.o build/message.o 
+tests: main_idu_test.o main_odu_test.o main_satellite_test.o message.o
+		$(CC) -g -o bin/idu_test build/main_idu_test.o build/message.o 
+		$(CC) -g -o bin/odu_test build/main_odu_test.o build/message.o 
 		$(CC) -g -o bin/satellite_test build/main_satellite_test.o build/message.o 
-		$(CC) -g -o bin/RECEIVER_TEST build/main_receiver_test.o build/message.o  
 
 # Target to compile simulator (ie. top model)
 .PHONY: simulator
 simulator: main_top.o message.o 
-	$(CC) -g -o bin/ABP build/main_top.o build/message.o 
+	$(CC) -g -o bin/simulator build/main_top.o build/message.o 
 	
 # Target to clean
 .PHONY: clean
@@ -68,6 +70,12 @@ help:
 	@echo "\tMake the simulator (ie. top model) only"
 	@echo "tests" 
 	@echo "\tMake the tests only"
+	@echo "idu" 
+	@echo "\tMake the IDU test only"
+	@echo "odu" 
+	@echo "\tMake the ODU test only"
+	@echo "satellite" 
+	@echo "\tMake the Satellite test only"
 	@echo "clean" 
 	@echo "\tClean built artifacts"
 

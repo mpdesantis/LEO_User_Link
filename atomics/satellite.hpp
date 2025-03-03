@@ -3,8 +3,8 @@
  ******************************************************************************
  * Satellite atomic model.
  *
- * Note: Based on Alternating_Bit_Protocol::sender.hpp, by Cristina Ruiz Martin,
- * ARSLab - Carleton University.
+ * Note: Based on example work by Cristina Ruiz Martin, ARSLab - Carleton 
+ * University.
  ******************************************************************************
  * Author: M. De Santis
  * CUID: 101213450

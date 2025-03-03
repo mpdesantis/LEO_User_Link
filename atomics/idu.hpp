@@ -1,13 +1,19 @@
-/**
-* Cristina Ruiz Martin
-* ARSLab - Carleton University
-*
-* receiver:
-* Cadmium implementation of CD++ Receiver atomic model
-*/
+/******************************************************************************
+ * idu.h
+ ******************************************************************************
+ * Indoor Unit (IDU) atomic model.
+ *
+ * Note: Based on example work by Cristina Ruiz Martin, ARSLab - Carleton 
+ * University.
+ ******************************************************************************
+ * Author: M. De Santis
+ * CUID: 101213450
+ * Date: 2025/03/02
+ ******************************************************************************
+ */
 
-#ifndef __RECEIVER_HPP__
-#define __RECEIVER_HPP__
+#ifndef __IDU_HPP__
+#define __IDU_HPP__
 
 
 #include <cadmium/modeling/ports.hpp>
@@ -98,4 +104,4 @@ using namespace std;
         };     
   
 
-#endif // __RECEIVER_HPP__
+#endif // __IDU_HPP__

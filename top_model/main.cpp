@@ -13,9 +13,9 @@
 
 //Atomic model headers
 #include <cadmium/basic_model/pdevs/iestream.hpp> //Atomic model for inputs
-#include "../atomics/subnet.hpp"
-#include "../atomics/sender.hpp"
-#include "../atomics/receiver.hpp"
+#include "../atomics/odu.hpp"
+#include "../atomics/satellite.hpp"
+#include "../atomics/idu.hpp"
 
 //C++ headers
 #include <iostream>
@@ -61,26 +61,26 @@ int main(int argc, char ** argv) {
     shared_ptr<dynamic::modeling::model> input_reader = dynamic::translate::make_dynamic_atomic_model<InputReader_Int, TIME, const char* >("input_reader" , move(i_input));
 
     /****** Sender atomic model instantiation *******************/
-    shared_ptr<dynamic::modeling::model> sender1 = dynamic::translate::make_dynamic_atomic_model<Sender, TIME>("sender1");
+    shared_ptr<dynamic::modeling::model> satellite1 = dynamic::translate::make_dynamic_atomic_model<Sender, TIME>("satellite1");
 
     /****** Receiver atomic model instantiation *******************/
-    shared_ptr<dynamic::modeling::model> receiver1 = dynamic::translate::make_dynamic_atomic_model<Receiver, TIME>("receiver1");
+    shared_ptr<dynamic::modeling::model> idu1 = dynamic::translate::make_dynamic_atomic_model<Receiver, TIME>("idu1");
 
     /****** Subnet atomic models instantiation *******************/
-    shared_ptr<dynamic::modeling::model> subnet1 = dynamic::translate::make_dynamic_atomic_model<Subnet, TIME>("subnet1");
-    shared_ptr<dynamic::modeling::model> subnet2 = dynamic::translate::make_dynamic_atomic_model<Subnet, TIME>("subnet2");
+    shared_ptr<dynamic::modeling::model> odu1 = dynamic::translate::make_dynamic_atomic_model<Subnet, TIME>("odu1");
+    shared_ptr<dynamic::modeling::model> odu2 = dynamic::translate::make_dynamic_atomic_model<Subnet, TIME>("odu2");
 
     /*******NETWORKS COUPLED MODEL********/
     dynamic::modeling::Ports iports_Network = {typeid(inp_1),typeid(inp_2)};
     dynamic::modeling::Ports oports_Network = {typeid(outp_1),typeid(outp_2)};
-    dynamic::modeling::Models submodels_Network = {subnet1, subnet2};
+    dynamic::modeling::Models submodels_Network = {odu1, odu2};
     dynamic::modeling::EICs eics_Network = {
-        dynamic::translate::make_EIC<inp_1, Subnet_defs::in>("subnet1"),
-         dynamic::translate::make_EIC<inp_2, Subnet_defs::in>("subnet2")
+        dynamic::translate::make_EIC<inp_1, Subnet_defs::in>("odu1"),
+         dynamic::translate::make_EIC<inp_2, Subnet_defs::in>("odu2")
     };
     dynamic::modeling::EOCs eocs_Network = {
-        dynamic::translate::make_EOC<Subnet_defs::out,outp_1>("subnet1"),
-        dynamic::translate::make_EOC<Subnet_defs::out,outp_2>("subnet2")
+        dynamic::translate::make_EOC<Subnet_defs::out,outp_1>("odu1"),
+        dynamic::translate::make_EOC<Subnet_defs::out,outp_2>("odu2")
     };
     dynamic::modeling::ICs ics_Network = {};
     shared_ptr<dynamic::modeling::coupled<TIME>> NETWORK;
@@ -91,19 +91,19 @@ int main(int argc, char ** argv) {
     /*******ABP SIMULATOR COUPLED MODEL********/
     dynamic::modeling::Ports iports_ABP = {typeid(inp_control)};
     dynamic::modeling::Ports oports_ABP = {typeid(outp_ack),typeid(outp_pack)};
-    dynamic::modeling::Models submodels_ABP = {sender1, receiver1, NETWORK};
+    dynamic::modeling::Models submodels_ABP = {satellite1, idu1, NETWORK};
     dynamic::modeling::EICs eics_ABP = {
-        cadmium::dynamic::translate::make_EIC<inp_control, Sender_defs::controlIn>("sender1")
+        cadmium::dynamic::translate::make_EIC<inp_control, Sender_defs::controlIn>("satellite1")
     };
     dynamic::modeling::EOCs eocs_ABP = {
-        dynamic::translate::make_EOC<Sender_defs::packetSentOut,outp_pack>("sender1"),
-        dynamic::translate::make_EOC<Sender_defs::ackReceivedOut,outp_ack>("sender1")
+        dynamic::translate::make_EOC<Sender_defs::packetSentOut,outp_pack>("satellite1"),
+        dynamic::translate::make_EOC<Sender_defs::ackReceivedOut,outp_ack>("satellite1")
     };
     dynamic::modeling::ICs ics_ABP = {
-        dynamic::translate::make_IC<Sender_defs::dataOut, inp_1>("sender1","Network"),
-        dynamic::translate::make_IC<outp_2, Sender_defs::ackIn>("Network","sender1"),
-        dynamic::translate::make_IC<Receiver_defs::out, inp_2>("receiver1","Network"),
-        dynamic::translate::make_IC<outp_1, Receiver_defs::in>("Network","receiver1")
+        dynamic::translate::make_IC<Sender_defs::dataOut, inp_1>("satellite1","Network"),
+        dynamic::translate::make_IC<outp_2, Sender_defs::ackIn>("Network","satellite1"),
+        dynamic::translate::make_IC<Receiver_defs::out, inp_2>("idu1","Network"),
+        dynamic::translate::make_IC<outp_1, Receiver_defs::in>("Network","idu1")
     };
     shared_ptr<dynamic::modeling::coupled<TIME>> ABP;
     ABP = make_shared<dynamic::modeling::coupled<TIME>>(

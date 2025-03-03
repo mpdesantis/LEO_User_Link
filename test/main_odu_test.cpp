@@ -13,7 +13,7 @@
 
 //Atomic model headers
 #include <cadmium/basic_model/pdevs/iestream.hpp> //Atomic model for inputs
-#include "../atomics/subnet.hpp"
+#include "../atomics/odu.hpp"
 
 //C++ libraries
 #include <iostream>
@@ -41,13 +41,13 @@ class InputReader_Message_t : public iestream_input<Message_t,T> {
 int main(){
 
     /****** Input Reader atomic model instantiation *******************/
-    const char * i_input_data = "../input_data/subnet_input_test.txt";
+    const char * i_input_data = "../input_data/odu_input_test.txt";
     shared_ptr<dynamic::modeling::model> input_reader;
     input_reader = dynamic::translate::make_dynamic_atomic_model<InputReader_Message_t, TIME, const char*>("input_reader", move(i_input_data));
 
     /****** Subnet atomic model instantiation *******************/
-    shared_ptr<dynamic::modeling::model> subnet1;
-    subnet1 = dynamic::translate::make_dynamic_atomic_model<Subnet, TIME>("subnet1");
+    shared_ptr<dynamic::modeling::model> odu1;
+    odu1 = dynamic::translate::make_dynamic_atomic_model<Subnet, TIME>("odu1");
 
     /*******TOP MODEL********/
     dynamic::modeling::Ports iports_TOP;
@@ -55,16 +55,16 @@ int main(){
     dynamic::modeling::Ports oports_TOP;
     oports_TOP = {typeid(top_out)};
     dynamic::modeling::Models submodels_TOP;
-    submodels_TOP = {input_reader, subnet1};
+    submodels_TOP = {input_reader, odu1};
     dynamic::modeling::EICs eics_TOP;
     eics_TOP = {};
     dynamic::modeling::EOCs eocs_TOP;
     eocs_TOP = {
-        dynamic::translate::make_EOC<Subnet_defs::out,top_out>("subnet1")
+        dynamic::translate::make_EOC<Subnet_defs::out,top_out>("odu1")
     };
     dynamic::modeling::ICs ics_TOP;
     ics_TOP = {
-        dynamic::translate::make_IC<iestream_input_defs<Message_t>::out,Subnet_defs::in>("input_reader","subnet1")
+        dynamic::translate::make_IC<iestream_input_defs<Message_t>::out,Subnet_defs::in>("input_reader","odu1")
     };
     shared_ptr<dynamic::modeling::coupled<TIME>> TOP;
     TOP = make_shared<dynamic::modeling::coupled<TIME>>(
@@ -72,13 +72,13 @@ int main(){
     );
 
     /*************** Loggers *******************/
-    static ofstream out_messages("../simulation_results/subnet_test_output_messages.txt");
+    static ofstream out_messages("../simulation_results/odu_test_output_messages.txt");
     struct oss_sink_messages{
         static ostream& sink(){          
             return out_messages;
         }
     };
-    static ofstream out_state("../simulation_results/subnet_test_output_state.txt");
+    static ofstream out_state("../simulation_results/odu_test_output_state.txt");
     struct oss_sink_state{
         static ostream& sink(){          
             return out_state;
