@@ -1,57 +1,96 @@
 #ifndef ATOMIC_MODEL_HPP
 #define ATOMIC_MODEL_HPP
 
+// Standard includes
 #include <random>
 #include <iostream>
+
+// Cadmium V2 includes
 #include "cadmium/modeling/devs/atomic.hpp"
 
+// Namespaces
 using namespace cadmium;
 
+/**
+ * Atomic model state variables
+ */
 struct atomic_modelState {
+    /**
+     * Members
+     */
     double sigma;
-    //you can have as many state variables as you want/ need
 
+    /**
+     * Constructor
+     */
     explicit atomic_modelState(): sigma(1){
     }
 };
 
-#ifndef NO_LOGGING
+/**
+ * operator<< overload definition.
+ *
+ * Defines the output format to a given file stream uwsing this model's state variables.
+ */
 std::ostream& operator<<(std::ostream &out, const atomic_modelState& state) {
     out  << "{" << state.sigma << "}";
     return out;
 }
-#endif
 
+/**
+ * Atomic model class definition.
+ *
+ * Extends the Cadmium V2 `Atomic` class.
+ */
 class atomic_model : public Atomic<atomic_modelState> {
+
     public:
 
-    //Declare your ports here
+    /**
+     * Member ports
+     */
 
+    /**
+     * Constructor
+     */
     atomic_model(const std::string id) : Atomic<atomic_modelState>(id, atomic_modelState()) {
-        //Constructor of your atomic model. Initialize ports here.
+        // Initialize ports
+
     }
 
-    // inernal transition
+    /**
+     * Internal transition function (delta_int)
+     */
     void internalTransition(atomic_modelState& state) const override {
-        //your internal transition function goes here
+
+        // Advance sigma
         state.sigma += 1;
     }
 
-    // external transition
+    /**
+     * External transition function (delta_ext)
+     */
     void externalTransition(atomic_modelState& state, double e) const override {
-        //your external transition function hoes here
+
+        // Update sigma based on elapsed duration
+        state.sigma -= e; 
     }
     
     
-    // output function
+    /**
+     * Output function (lambda)
+     */
     void output(const atomic_modelState& state) const override {
-        //your output function goes here
+
     }
 
-    // time_advance function
+    /**
+     * Time advance function (ta)
+     */
     [[nodiscard]] double timeAdvance(const atomic_modelState& state) const override {     
             return state.sigma;
     }
+
 };
 
 #endif
