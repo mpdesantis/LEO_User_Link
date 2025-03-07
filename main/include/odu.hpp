@@ -18,7 +18,7 @@ enum class StateName {
     PASSIVE,
     ACQUIRE_LOCK,
     TX_RX
-}
+};
 
 /**
  * operator<< overload definition.
@@ -43,6 +43,7 @@ std::ostream& operator<<(std::ostream& os, StateName state_name) {
     return os;
 }
 
+
 /**
  * Atomic model state variables
  */
@@ -56,7 +57,7 @@ struct OduState {
     /**
      * Constructor
      */
-    explicit OduState(): sigma(Odu::DEFAULT_TIME), s(StateName::PASSIVE) {
+    explicit OduState(): sigma(1), s(StateName::PASSIVE) {
     }
 };
 
@@ -82,13 +83,12 @@ class Odu : public Atomic<OduState> {
 
 private:
 
+public:
+
     /**
      * Constants
      */
     static constexpr double LOCK_TIME = 2.00;
-    static constexpr double INFINITY = std::numeric_limits<double>::infinity();
-
-public:
 
     /**
      * Member ports
@@ -114,7 +114,7 @@ public:
         // Update state
         state.s = StateName::TX_RX;
         // Update sigma
-        state.sigma = INFINITY;
+        state.sigma = std::numeric_limits<double>::infinity();
     }
 
     /**
@@ -149,7 +149,7 @@ public:
                         // Update state
                         state.s = StateName::PASSIVE;
                         // Update sigma
-                        state.sigma = INFINITY;
+                        state.sigma = std::numeric_limits<double>::infinity();
                     }
                     break;
                 // Default:
@@ -200,19 +200,19 @@ public:
      */
     [[nodiscard]] double timeAdvance(const OduState& state) const override {     
 
-        // Switch on state
-        switch (state.s) {
-            // Case: ACQUIRE_LOCK
-            case StateName::ACQUIRE_LOCK:
-                state.sigma = LOCK_TIME;
-                break;
-            // Default:
-            // Case: PASSIVE
-            // Case: TX_RX
-            default:
-                state.sigma = INFINITY;
-                break;
-        }
+        //// Switch on state
+        //switch (state.s) {
+        //    // Case: ACQUIRE_LOCK
+        //    case StateName::ACQUIRE_LOCK:
+        //        state.sigma = LOCK_TIME;
+        //        break;
+        //    // Default:
+        //    // Case: PASSIVE
+        //    // Case: TX_RX
+        //    default:
+        //        state.sigma = std::numeric_limits<double>::infinity();
+        //        break;
+        //}
 
         return state.sigma;
     }

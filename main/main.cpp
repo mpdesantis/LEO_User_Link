@@ -1,5 +1,6 @@
 #include <limits>
-#include "include/top.hpp"
+#include "include/top_odu.hpp"
+//#include "include/odu.hpp"
 #include "cadmium/simulation/root_coordinator.hpp"
 #include "cadmium/simulation/logger/stdout.hpp"
 #include "cadmium/simulation/logger/csv.hpp"
@@ -9,7 +10,7 @@ using namespace cadmium;
 int main() {
 
     // Top model
-	auto model = std::make_shared<top_coupled> ("top");
+	auto model = std::make_shared<TopCoupledOduTest> ("TOP");
 
     // Root coordinator
 	auto rootCoordinator = RootCoordinator(model);
@@ -18,12 +19,12 @@ int main() {
 	// rootCoordinator.setLogger<STDOUTLogger>(";");
 
     // CSV file logging
-	rootCoordinator.setLogger<CSVLogger>("output/top_model_output.csv", ";");
+	rootCoordinator.setLogger<CSVLogger>("output/top_coupled_odu_test.csv", ";");
 
     // Start the root coordinator
 	rootCoordinator.start();
     // Begin simulation
-	rootCoordinator.simulate(10.1);
+	rootCoordinator.simulate(20.00);
     // Stop simulation
 	rootCoordinator.stop();	
 
