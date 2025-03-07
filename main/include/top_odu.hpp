@@ -6,6 +6,7 @@
 
 // Project atomic models
 #include "odu.hpp"
+#include "driver.hpp"
 
 using namespace cadmium;
 
@@ -17,8 +18,10 @@ struct TopCoupledOduTest : public Coupled {
      * @param id ID of the model.
      */
     TopCoupledOduTest(const std::string& id) : Coupled(id) {
-        auto atomic_1 = addComponent<Odu>("ODU");
-        //auto atomic_2 = addComponent<Odu>("ODU_DRIVER");
+        auto atomic_1 = addComponent<driver::Driver>("DRIVER");
+        auto atomic_2 = addComponent<Odu>("ODU");
+
+        addCoupling(atomic_1->test_out, atomic_2->beam_in);
     }
 
 };

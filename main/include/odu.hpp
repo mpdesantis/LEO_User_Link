@@ -57,7 +57,7 @@ struct OduState {
     /**
      * Constructor
      */
-    explicit OduState(): sigma(1), s(StateName::PASSIVE) {
+    explicit OduState(): sigma(std::numeric_limits<double>::infinity()), s(StateName::PASSIVE) {
     }
 };
 
@@ -111,10 +111,15 @@ public:
      * Internal transition function (delta_int)
      */
     void internalTransition(OduState& state) const override {
-        // Update state
-        state.s = StateName::TX_RX;
-        // Update sigma
-        state.sigma = std::numeric_limits<double>::infinity();
+
+        // Case: ACQUIRE_LOCK
+        if (state.s == StateName::ACQUIRE_LOCK) {
+            // Update state
+            state.s = StateName::TX_RX;
+            // Update sigma
+            state.sigma = std::numeric_limits<double>::infinity();
+        }
+
     }
 
     /**
