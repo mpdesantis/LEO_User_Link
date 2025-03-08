@@ -14,7 +14,7 @@ using namespace cadmium;
 /**
  * Enum
  */
-enum class StateName {
+enum class OduStateName {
     PASSIVE,
     ACQUIRE_LOCK,
     TX_RX
@@ -23,17 +23,17 @@ enum class StateName {
 /**
  * operator<< overload definition.
  *
- * Defines the output format of the StateName enum class.
+ * Defines the output format of the OduStateName enum class.
  */
-std::ostream& operator<<(std::ostream& os, StateName state_name) {
+std::ostream& operator<<(std::ostream& os, OduStateName state_name) {
     switch (state_name) {
-        case StateName::PASSIVE:
+        case OduStateName::PASSIVE:
             os << "PASSIVE";
             break;
-        case StateName::ACQUIRE_LOCK:
+        case OduStateName::ACQUIRE_LOCK:
             os << "ACQUIRE_LOCK";
             break;
-        case StateName::TX_RX:
+        case OduStateName::TX_RX:
             os << "TX_RX";
             break;
         default:
@@ -52,12 +52,12 @@ struct OduState {
      * Members
      */
     double sigma;
-    StateName s;
+    OduStateName s;
     
     /**
      * Constructor
      */
-    explicit OduState(): sigma(std::numeric_limits<double>::infinity()), s(StateName::PASSIVE) {
+    explicit OduState(): sigma(std::numeric_limits<double>::infinity()), s(OduStateName::PASSIVE) {
     }
 };
 
@@ -113,9 +113,9 @@ public:
     void internalTransition(OduState& state) const override {
 
         // Case: ACQUIRE_LOCK
-        if (state.s == StateName::ACQUIRE_LOCK) {
+        if (state.s == OduStateName::ACQUIRE_LOCK) {
             // Update state
-            state.s = StateName::TX_RX;
+            state.s = OduStateName::TX_RX;
             // Update sigma
             state.sigma = std::numeric_limits<double>::infinity();
         }
@@ -138,21 +138,21 @@ public:
             // Switch on state
             switch (state.s) {
                 // Case: PASSIVE
-                case StateName::PASSIVE:
+                case OduStateName::PASSIVE:
                     // Case: beam_in?ON
                     if (port_message) {
                         // Update state
-                        state.s = StateName::ACQUIRE_LOCK;
+                        state.s = OduStateName::ACQUIRE_LOCK;
                         // Update sigma
                         state.sigma = LOCK_TIME;
                     }
                     break;
                 // Case: TX_RX
-                case StateName::TX_RX:
+                case OduStateName::TX_RX:
                     // Case: beam_in?OFF
                     if (!port_message) {
                         // Update state
-                        state.s = StateName::PASSIVE;
+                        state.s = OduStateName::PASSIVE;
                         // Update sigma
                         state.sigma = std::numeric_limits<double>::infinity();
                     }
@@ -183,7 +183,7 @@ public:
         // Switch on state
         switch (state.s) {
             // Case: ACQUIRE_LOCK
-            case StateName::ACQUIRE_LOCK:
+            case OduStateName::ACQUIRE_LOCK:
                 // Output: signal_out!ON
                 port_message = true;
                 break;
@@ -204,21 +204,6 @@ public:
      * Time advance function (ta)
      */
     [[nodiscard]] double timeAdvance(const OduState& state) const override {     
-
-        //// Switch on state
-        //switch (state.s) {
-        //    // Case: ACQUIRE_LOCK
-        //    case StateName::ACQUIRE_LOCK:
-        //        state.sigma = LOCK_TIME;
-        //        break;
-        //    // Default:
-        //    // Case: PASSIVE
-        //    // Case: TX_RX
-        //    default:
-        //        state.sigma = std::numeric_limits<double>::infinity();
-        //        break;
-        //}
-
         return state.sigma;
     }
 
