@@ -1,2 +1,3 @@
 add_subdirectory(odu_driver_test)
+add_subdirectory(satellite_generator_test)
 
