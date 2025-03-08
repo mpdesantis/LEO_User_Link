@@ -1,5 +1,5 @@
-#ifndef TOP_ODU_HPP
-#define TOP_ODU_HPP
+#ifndef CM_SATELLITE_TEST_HPP
+#define CM_SATELLITE_TEST_HPP
 
 // Cadmium V2
 #include "cadmium/modeling/devs/coupled.hpp"
