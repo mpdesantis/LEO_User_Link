@@ -57,6 +57,7 @@ struct IduState {
      */
     double sigma;
     IduStateName s;
+    // RF chain indicators
     bool chain1_up;
     bool chain2_up;
     
@@ -69,6 +70,8 @@ struct IduState {
     /**
      * Methods
      */
+
+    // Return true if a link is up (ie. at least one chain up)
     bool link_up() const { return chain1_up || chain2_up; }
     
 };
@@ -103,7 +106,7 @@ public:
      * Constants
      */
     static constexpr double CONNECTING_TIME = 1.00;
-    static constexpr double DISCONNECTING_TIME = 1.00;
+    static constexpr double DISCONNECTING_TIME = 0.50;
 
     /**
      * Member ports
@@ -127,58 +130,43 @@ public:
      */
     void internalTransition(IduState& state) const override {
 
-        std::cout << "IDU::" << __func__ << " entry state: " << state.s << std::endl;
-
         // Switch on state
         switch (state.s) {
             // Case: PASSIVE
             case IduStateName::PASSIVE:
                 state.s = IduStateName::CONNECTING;
-                //state.sigma += 1;
                 break;
             // Case: CONNECTING
             case IduStateName::CONNECTING:
                 state.s = IduStateName::MOD_DEMOD;
-                //state.sigma += 1;
                 break;
             // Case: MOD_DEMOD
             case IduStateName::MOD_DEMOD:
                 // At least one chain is up; continue modulating/demodulating on link
                 if (state.link_up()) {
-                    // Update state
                     state.s = IduStateName::MOD_DEMOD;
-                    // Update sigma
-                    //state.sigma += 1;
                 }
                 // All chains down; therefore, link is down
                 else {
-                    // Update state
                     state.s = IduStateName::DISCONNECTING;
-                    // Update sigma
-                    //state.sigma += 1;
                 }
                 break;
             // Case: DISCONNECTING
             case IduStateName::DISCONNECTING:
                 state.s = IduStateName::PASSIVE;
-                //state.sigma += 1;
                 break;
             // Default:
             default:
                 break;
         }
-        //state.sigma = 1;
-        std::cout << "IDU::" << __func__ << " exit state: " << state.s << std::endl;
     }
 
     /**
      * External transition function (delta_ext)
      */
     void externalTransition(IduState& state, double e) const override {
-        std::cout << "IDU::" << __func__ << " entry  state: " << state.s << std::endl;
 
         /* Input Port Handling */
-
 
         // Check signal_in1 port for content
         if (!signal_in1->empty()) {
@@ -192,65 +180,35 @@ public:
                 case IduStateName::PASSIVE:
                     // Case: signal_in1?ON
                     if (port_message) {
-                        // Update chain status indicator
                         state.chain1_up = true;
-                        // Update state
-                        //state.s = IduStateName::MOD_DEMOD;
                         state.s = IduStateName::CONNECTING;
-                        // DEBUG
                     }
                     break;
-                ///// Case: CONNECTING
-                ///case IduStateName::CONNECTING:
-                ///    // Case: signal_in1?ON
-                ///    if (port_message) {
-                ///        // Update chain status indicator
-                ///        state.chain1_up = true;
-                ///        // Update state
-                ///        state.s = IduStateName::MOD_DEMOD;
-                ///        //state.s = IduStateName::CONNECTING;
-                ///        // DEBUG
-                ///    }
-                ///    else {
-                ///        state.chain1_up = false;
-                ///        state.s = IduStateName::DISCONNECTING;
-                ///    }
-                ///    break;
                 // Case: MOD_DEMOD
                 case IduStateName::MOD_DEMOD:
                     // Case: signal_in1?ON
                     if (port_message) {
-                        // Update chain status indicator
                         state.chain1_up = true;
-                        // At least this chain is up; continue modulating/demodulating on link
                         state.s = IduStateName::MOD_DEMOD;
                     }
                     // Case: signal_in1?OFF
                     else {
-                        // Update chain status indicator
                         state.chain1_up = false;
-                        // Check for at least one chain up
+                        // Case: At least one chain up
                         if (state.link_up()) {
-                            // Other chain is up, continue modulating/demodulating on link
                             state.s = IduStateName::MOD_DEMOD;
                         }
+                        // Case: No chains up
                         else {
-                            // Both chains are down, stop modulating/demodulating on link
-                            //state.s = IduStateName::PASSIVE;
                             state.s = IduStateName::DISCONNECTING;
                         }
                     }
                     break;
-                // Case: DISCONNECTING
-                //case IduStateName::DISCONNECTING:
-                //    // Update state
-                //    state.s = IduStateName::PASSIVE;
-                //    break;
-                //// Default:
                 default:
                     break;
             } // end switch
         } // end if
+
 
         // Check signal_in2 port for content
         if (!signal_in2->empty()) {
@@ -264,73 +222,40 @@ public:
                 case IduStateName::PASSIVE:
                     // Case: signal_in2?ON
                     if (port_message) {
-                        // Update chain status indicator
                         state.chain2_up = true;
-                        // Update state
-                        //state.s = IduStateName::MOD_DEMOD;
                         state.s = IduStateName::CONNECTING;
-                        // DEBUG
                     }
                     break;
-                ///// Case: CONNECTING
-                ///case IduStateName::CONNECTING:
-                ///    // Case: signal_in2?ON
-                ///    if (port_message) {
-                ///        // Update chain status indicator
-                ///        state.chain2_up = true;
-                ///        // Update state
-                ///        state.s = IduStateName::MOD_DEMOD;
-                ///        //state.s = IduStateName::CONNECTING;
-                ///        // DEBUG
-                ///    }
-                ///    else {
-                ///        state.chain2_up = false;
-                ///        state.s = IduStateName::DISCONNECTING;
-                ///    }
-                ///    break;
                 // Case: MOD_DEMOD
                 case IduStateName::MOD_DEMOD:
                     // Case: signal_in2?ON
                     if (port_message) {
-                        // Update chain status indicator
                         state.chain2_up = true;
-                        // At least this chain is up; continue modulating/demodulating on link
                         state.s = IduStateName::MOD_DEMOD;
                     }
                     // Case: signal_in2?OFF
                     else {
-                        // Update chain status indicator
                         state.chain2_up = false;
-                        // Check for at least one chain up
+                        // Case: At least one chain up
                         if (state.link_up()) {
-                            // Other chain is up, continue modulating/demodulating on link
                             state.s = IduStateName::MOD_DEMOD;
                         }
+                        // Case: No chains up
                         else {
-                            // Both chains are down, stop modulating/demodulating on link
-                            //state.s = IduStateName::PASSIVE;
                             state.s = IduStateName::DISCONNECTING;
                         }
                     }
                     break;
-                // Case: DISCONNECTING
-                //case IduStateName::DISCONNECTING:
-                //    // Update state
-                //    state.s = IduStateName::PASSIVE;
-                //    break;
-                //// Default:
                 default:
                     break;
             } // end switch
         } // end if
-
 
         /* Additional Handling */
 
         // Update sigma based on elapsed duration
         state.sigma -= e; 
 
-        std::cout << "IDU::" << __func__ << " exit state: " << state.s << std::endl;
     }
     
     /**
@@ -338,7 +263,7 @@ public:
      */
     void output(const IduState& state) const override {
 
-        // Output corresponds to status fo the link
+        // Output corresponds to status of the link
         idu_out->addMessage(state.link_up());
 
     }
