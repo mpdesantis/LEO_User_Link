@@ -17,6 +17,7 @@ using namespace cadmium;
 enum class OduStateName {
     PASSIVE,
     ACQUIRE_LOCK,
+    RELEASE_LOCK,
     TX_RX
 };
 
@@ -32,6 +33,9 @@ std::ostream& operator<<(std::ostream& os, OduStateName state_name) {
             break;
         case OduStateName::ACQUIRE_LOCK:
             os << "ACQUIRE_LOCK";
+            break;
+        case OduStateName::RELEASE_LOCK:
+            os << "RELEASE_LOCK";
             break;
         case OduStateName::TX_RX:
             os << "TX_RX";
@@ -53,11 +57,12 @@ struct OduState {
      */
     double sigma;
     OduStateName s;
+    bool lock;
     
     /**
      * Constructor
      */
-    explicit OduState(): sigma(std::numeric_limits<double>::infinity()), s(OduStateName::PASSIVE) {
+    explicit OduState(): sigma(std::numeric_limits<double>::infinity()), s(OduStateName::PASSIVE), lock(false) {
    }
 };
 
@@ -69,7 +74,8 @@ struct OduState {
 std::ostream& operator<<(std::ostream &out, const OduState& state) {
     out << "{" 
             << "state=" << state.s << ", "
-            << "sigma=" << state.sigma
+            << "sigma=" << state.sigma << ", "
+            << "lock=" << state.lock
         << "}";
     return out;
 }
@@ -88,7 +94,8 @@ public:
     /**
      * Constants
      */
-    static constexpr double LOCK_TIME = 8.00;
+    static constexpr double ACQUIRE_LOCK_TIME = 8.00;
+    static constexpr double RELEASE_LOCK_TIME = 1.00;
 
     /**
      * Member ports
@@ -119,7 +126,7 @@ public:
             // Update state
             state.s = OduStateName::ACQUIRE_LOCK;
             // Update sigma
-            state.sigma = LOCK_TIME;
+            state.sigma = ACQUIRE_LOCK_TIME;
         }
         // Case: ACQUIRE_LOCK
         else if (state.s == OduStateName::ACQUIRE_LOCK) {
@@ -164,7 +171,7 @@ public:
                         // Update state
                         state.s = OduStateName::ACQUIRE_LOCK;
                         // Update sigma
-                        state.sigma = LOCK_TIME;
+                        state.sigma = ACQUIRE_LOCK_TIME;
                     }
                     break;
                 // Case: ACQUIRE_LOCK
