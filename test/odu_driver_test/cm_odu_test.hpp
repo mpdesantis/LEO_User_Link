@@ -10,15 +10,15 @@
 
 using namespace cadmium;
 
-struct TopCoupledOduTest : public Coupled {
+struct CmOduTest : public Coupled {
 
     /**
      * Constructor for top coupled model.
      *
      * @param id ID of the model.
      */
-    TopCoupledOduTest(const std::string& id) : Coupled(id) {
-        auto atomic_1 = addComponent<driver::Driver>("DRIVER");
+    CmOduTest(const std::string& id) : Coupled(id) {
+        auto atomic_1 = addComponent<driver::Driver>("Driver");
         auto atomic_2 = addComponent<Odu>("ODU");
 
         addCoupling(atomic_1->test_out, atomic_2->beam_in);

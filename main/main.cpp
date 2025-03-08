@@ -2,7 +2,7 @@
 #include <limits>
 
 // Models
-#include "include/top_odu.hpp"
+// #include "include/top_odu.hpp"
 
 // Cadmium V2
 #include "cadmium/simulation/root_coordinator.hpp"
@@ -18,24 +18,24 @@ int main() {
      */
 
     // Top model
-	auto model = std::make_shared<TopCoupledOduTest> ("leo_user_link");
-    double simulation_duration = 20.00;
+	//auto model = std::make_shared<TopCoupledOduTest> ("leo_user_link");
+    //double simulation_duration = 20.00;
 
-    // Root coordinator
-	auto rootCoordinator = RootCoordinator(model);
+    //// Root coordinator
+	//auto rootCoordinator = RootCoordinator(model);
 
-    // `stdout` logging
-	//rootCoordinator.setLogger<STDOUTLogger>(";");
+    //// `stdout` logging
+	////rootCoordinator.setLogger<STDOUTLogger>(";");
 
-    // CSV file logging
-	rootCoordinator.setLogger<CSVLogger>("output/leo_user_link.csv", ";");
+    //// CSV file logging
+	//rootCoordinator.setLogger<CSVLogger>("output/leo_user_link.csv", ";");
 
-    // Start the root coordinator
-	rootCoordinator.start();
-    // Begin simulation
-	rootCoordinator.simulate(simulation_duration);
-    // Stop simulation
-	rootCoordinator.stop();	
+    //// Start the root coordinator
+	//rootCoordinator.start();
+    //// Begin simulation
+	//rootCoordinator.simulate(simulation_duration);
+    //// Stop simulation
+	//rootCoordinator.stop();	
 
 	return 0;
 }

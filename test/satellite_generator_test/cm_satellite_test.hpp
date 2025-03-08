@@ -19,8 +19,6 @@ struct CmSatelliteTest : public Coupled {
     CmSatelliteTest(const std::string& id) : Coupled(id) {
         auto atomic_1 = addComponent<Satellite>("Satellite1");
         auto atomic_2 = addComponent<Satellite>("Satellite2");
-
-        //addCoupling(atomic_1->test_out, atomic_2->beam_in);
     }
 
 };
