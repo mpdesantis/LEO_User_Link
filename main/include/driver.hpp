@@ -84,7 +84,7 @@ public:
      * Constants
      */
     static constexpr double SEND_TIME_MIN = 0.10;
-    static constexpr double SEND_TIME_MAX = 4.00;
+    static constexpr double SEND_TIME_MAX = 8.00;
 
     /**
      * Member ports
