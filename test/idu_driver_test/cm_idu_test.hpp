@@ -18,8 +18,8 @@ struct CmIduTest : public Coupled {
      * @param id ID of the model.
      */
     CmIduTest(const std::string& id) : Coupled(id) {
-        auto driver1 = addComponent<driver::Driver>("DriverSatellite1");
-        auto driver2 = addComponent<driver::Driver>("DriverSatellite2");
+        auto driver1 = addComponent<driver::Driver>("DriverODU1");
+        auto driver2 = addComponent<driver::Driver>("DriverODU2");
         auto idu = addComponent<Idu>("IDU");
 
         addCoupling(driver1->test_out, idu->signal_in1);
