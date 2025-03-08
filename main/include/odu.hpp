@@ -112,7 +112,7 @@ public:
      */
     void internalTransition(OduState& state) const override {
 
-        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
+        //std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
 
         // Case: PASSIVE
         if (state.s == OduStateName::PASSIVE) {
@@ -126,7 +126,6 @@ public:
             // Update state
             state.s = OduStateName::TX_RX;
             // Update sigma
-            //state.sigma = std::numeric_limits<double>::infinity();
             state.sigma += 1;
         }
         // Case: TX_RX
@@ -134,11 +133,10 @@ public:
             // Update state
             state.s = OduStateName::PASSIVE;
             // Update sigma
-            state.sigma = std::numeric_limits<double>::infinity();
             state.sigma += 1;
         }
 
-        std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
+        //std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
 
     }
 
@@ -147,7 +145,7 @@ public:
      */
     void externalTransition(OduState& state, double e) const override {
 
-        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
+        //std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
 
         /* Input Port Handling */
 
@@ -201,7 +199,7 @@ public:
         // Update sigma based on elapsed duration
         state.sigma -= e; 
 
-        std::cout << "ODU::" << __func__ << "::final state: " << state.s << std::endl;
+        //std::cout << "ODU::" << __func__ << "::final state: " << state.s << std::endl;
     }
     
     
@@ -210,7 +208,7 @@ public:
      */
     void output(const OduState& state) const override {
 
-        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
+        //std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
 
         // Port message to write to port
         bool port_message = false;
@@ -234,7 +232,7 @@ public:
         // Write the output port
         signal_out->addMessage(port_message);
 
-        std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
+        //std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
 
     }
 

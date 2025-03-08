@@ -19,7 +19,7 @@ int main() {
 
     // Top model
 	auto model = std::make_shared<CmIduTest> ("CmIduTest");
-    double simulation_duration = 20.00;
+    double simulation_duration = 120.00;
 
     // Root coordinator
 	auto rootCoordinator = RootCoordinator(model);
