@@ -53,12 +53,11 @@ struct OduState {
      */
     double sigma;
     OduStateName s;
-    bool lock;
     
     /**
      * Constructor
      */
-    explicit OduState(): sigma(std::numeric_limits<double>::infinity()), s(OduStateName::PASSIVE), lock(false) {
+    explicit OduState(): sigma(std::numeric_limits<double>::infinity()), s(OduStateName::PASSIVE) {
    }
 };
 
@@ -70,8 +69,7 @@ struct OduState {
 std::ostream& operator<<(std::ostream &out, const OduState& state) {
     out << "{" 
             << "state=" << state.s << ", "
-            << "sigma=" << state.sigma << ", "
-            << "lock=" << state.lock 
+            << "sigma=" << state.sigma
         << "}";
     return out;
 }
@@ -116,15 +114,28 @@ public:
 
         std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
 
-        // DEBUG: Occurs only when we LEAVE ACQUIRE_LOCK
+        // Case: PASSIVE
+        if (state.s == OduStateName::PASSIVE) {
+            // Update state
+            state.s = OduStateName::ACQUIRE_LOCK;
+            // Update sigma
+            state.sigma = LOCK_TIME;
+        }
         // Case: ACQUIRE_LOCK
-        if (state.s == OduStateName::ACQUIRE_LOCK) {
+        else if (state.s == OduStateName::ACQUIRE_LOCK) {
             // Update state
             state.s = OduStateName::TX_RX;
             // Update sigma
+            //state.sigma = std::numeric_limits<double>::infinity();
+            state.sigma += 1;
+        }
+        // Case: TX_RX
+        else {
+            // Update state
+            state.s = OduStateName::PASSIVE;
+            // Update sigma
             state.sigma = std::numeric_limits<double>::infinity();
-            // Update lock
-            state.lock = true;
+            state.sigma += 1;
         }
 
         std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
@@ -156,8 +167,6 @@ public:
                         state.s = OduStateName::ACQUIRE_LOCK;
                         // Update sigma
                         state.sigma = LOCK_TIME;
-                        // Update lock indicator
-                        state.lock = true;
                     }
                     break;
                 // Case: ACQUIRE_LOCK
@@ -168,8 +177,6 @@ public:
                         state.s = OduStateName::PASSIVE;
                         // Update sigma
                         state.sigma = std::numeric_limits<double>::infinity();
-                        // Update lock indicator
-                        state.lock = false;
                     }
                     break;
                 // Case: TX_RX
@@ -180,8 +187,6 @@ public:
                         state.s = OduStateName::PASSIVE;
                         // Update sigma
                         state.sigma = std::numeric_limits<double>::infinity();
-                        // Update lock indicator
-                        state.lock = false;
                     }
                     break;
                 // Default:
@@ -218,6 +223,7 @@ public:
                 port_message = true;
                 break;
             // Default:
+            // Case: PASSIVE
             // Case: TX_RX
             default:
                 // Output: signal_out!OFF
