@@ -114,6 +114,8 @@ public:
      */
     void internalTransition(OduState& state) const override {
 
+        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
+
         // DEBUG: Occurs only when we LEAVE ACQUIRE_LOCK
         // Case: ACQUIRE_LOCK
         if (state.s == OduStateName::ACQUIRE_LOCK) {
@@ -125,12 +127,16 @@ public:
             state.lock = true;
         }
 
+        std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
+
     }
 
     /**
      * External transition function (delta_ext)
      */
     void externalTransition(OduState& state, double e) const override {
+
+        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
 
         /* Input Port Handling */
 
@@ -189,6 +195,8 @@ public:
 
         // Update sigma based on elapsed duration
         state.sigma -= e; 
+
+        std::cout << "ODU::" << __func__ << "::final state: " << state.s << std::endl;
     }
     
     
@@ -196,6 +204,8 @@ public:
      * Output function (lambda)
      */
     void output(const OduState& state) const override {
+
+        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
 
         // Port message to write to port
         bool port_message = false;
@@ -217,6 +227,8 @@ public:
 
         // Write the output port
         signal_out->addMessage(port_message);
+
+        std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
 
     }
 
