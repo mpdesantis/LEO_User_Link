@@ -90,7 +90,7 @@ public:
     /**
      * Constants
      */
-    static constexpr double LOCK_TIME = 2.00;
+    static constexpr double LOCK_TIME = 8.00;
 
     /**
      * Member ports
@@ -114,12 +114,15 @@ public:
      */
     void internalTransition(OduState& state) const override {
 
+        // DEBUG: Occurs only when we LEAVE ACQUIRE_LOCK
         // Case: ACQUIRE_LOCK
         if (state.s == OduStateName::ACQUIRE_LOCK) {
             // Update state
             state.s = OduStateName::TX_RX;
             // Update sigma
             state.sigma = std::numeric_limits<double>::infinity();
+            // Update lock
+            state.lock = true;
         }
 
     }
@@ -147,6 +150,20 @@ public:
                         state.s = OduStateName::ACQUIRE_LOCK;
                         // Update sigma
                         state.sigma = LOCK_TIME;
+                        // Update lock indicator
+                        state.lock = true;
+                    }
+                    break;
+                // Case: ACQUIRE_LOCK
+                case OduStateName::ACQUIRE_LOCK:
+                    // Case: beam_in?OFF
+                    if (!port_message) {
+                        // Update state
+                        state.s = OduStateName::PASSIVE;
+                        // Update sigma
+                        state.sigma = std::numeric_limits<double>::infinity();
+                        // Update lock indicator
+                        state.lock = false;
                     }
                     break;
                 // Case: TX_RX
@@ -157,10 +174,11 @@ public:
                         state.s = OduStateName::PASSIVE;
                         // Update sigma
                         state.sigma = std::numeric_limits<double>::infinity();
+                        // Update lock indicator
+                        state.lock = false;
                     }
                     break;
                 // Default:
-                // Case: ACQUIRE_LOCK
                 default:
                     break;
 
