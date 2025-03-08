@@ -81,7 +81,9 @@ struct IduState {
 std::ostream& operator<<(std::ostream &out, const IduState& state) {
     out << "{" 
             << "state=" << state.s << ", "
-            << "sigma=" << state.sigma 
+            << "sigma=" << state.sigma << ", "
+            << "chain1_up=" << state.chain1_up << ", "
+            << "chain2_up=" << state.chain2_up
         << "}";
     return out;
 }
@@ -336,36 +338,8 @@ public:
      */
     void output(const IduState& state) const override {
 
-        // Port message to write to port
-        bool port_message = false;
-
-        // Switch on state
-        switch (state.s) {
-            // Case: PASSIVE
-            case IduStateName::PASSIVE:
-                // Output: idu_out!ON
-                port_message = true;
-                break;
-            // Case: PASSIVE
-            case IduStateName::MOD_DEMOD:
-                // At least one chain is up; continue modulating/demodulating on link
-                if (state.link_up()) {
-                    // Output: idu_out!ON
-                    port_message = true;
-                }
-                // All chains down; therefore, link is down
-                else {
-                    // Output: idu_out!OFF
-                    port_message = false;
-                }
-                break;
-            // Default:
-            default:
-                break;
-        }
-
-        // Write the output port
-        idu_out->addMessage(port_message);
+        // Output corresponds to status fo the link
+        idu_out->addMessage(state.link_up());
 
     }
 
