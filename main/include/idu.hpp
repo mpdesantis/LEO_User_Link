@@ -61,7 +61,7 @@ struct IduState {
     /**
      * Methods
      */
-    bool link_up() { return chain1_up || chain2_up };
+    bool link_up() const { return chain1_up || chain2_up; }
     
 };
 
@@ -108,22 +108,13 @@ public:
         signal_in1 = addInPort<bool>("signal_in1");
         signal_in2 = addInPort<bool>("signal_in2");
         idu_out = addOutPort<bool>("idu_out");
-
     }
 
     /**
      * Internal transition function (delta_int)
      */
     void internalTransition(IduState& state) const override {
-
-        // Case: ACQUIRE_LOCK
-        if (state.s == IduStateName::ACQUIRE_LOCK) {
-            // Update state
-            state.s = IduStateName::MOD_DEMOD;
-            // Update sigma
-            state.sigma = std::numeric_limits<double>::infinity();
-        }
-
+        // NA
     }
 
     /**
@@ -137,7 +128,7 @@ public:
         if (!signal_in1->empty()) {
 
             // Content of the port message (last only)
-            const auto& port_message = singal_in1->getBag().back();
+            const auto& port_message = signal_in1->getBag().back();
 
             // Switch on state
             switch (state.s) {
@@ -146,7 +137,7 @@ public:
                     // Case: signal_in1?ON
                     if (port_message) {
                         // Update chain status indicator
-                        chain1_up = true;
+                        state.chain1_up = true;
                         // Update state
                         state.s = IduStateName::MOD_DEMOD;
                     }
@@ -156,16 +147,16 @@ public:
                     // Case: signal_in1?ON
                     if (port_message) {
                         // Update chain status indicator
-                        chain1_up = true;
+                        state.chain1_up = true;
                         // At least this chain is up; continue modulating/demodulating on link
                         state.s = IduStateName::MOD_DEMOD;
                     }
                     // Case: signal_in1?OFF
                     else {
                         // Update chain status indicator
-                        chain1_up = false;
+                        state.chain1_up = false;
                         // Check for at least one chain up
-                        if (link_up()) {
+                        if (state.link_up()) {
                             // Other chain is up, continue modulating/demodulating on link
                             state.s = IduStateName::MOD_DEMOD;
                         }
@@ -194,7 +185,7 @@ public:
                     // Case: signal_in2?ON
                     if (port_message) {
                         // Update chain status indicator
-                        chain2_up = true;
+                        state.chain2_up = true;
                         // Update state
                         state.s = IduStateName::MOD_DEMOD;
                     }
@@ -204,16 +195,16 @@ public:
                     // Case: signal_in2?ON
                     if (port_message) {
                         // Update chain status indicator
-                        chain2_up = true;
+                        state.chain2_up = true;
                         // At least this chain is up; continue modulating/demodulating on link
                         state.s = IduStateName::MOD_DEMOD;
                     }
                     // Case: signal_in2?OFF
                     else {
                         // Update chain status indicator
-                        chain2_up = false;
+                        state.chain2_up = false;
                         // Check for at least one chain up
-                        if (link_up()) {
+                        if (state.link_up()) {
                             // Other chain is up, continue modulating/demodulating on link
                             state.s = IduStateName::MOD_DEMOD;
                         }
@@ -253,7 +244,7 @@ public:
             // Case: PASSIVE
             case IduStateName::MOD_DEMOD:
                 // At least one chain is up; continue modulating/demodulating on link
-                if (link_up()) {
+                if (state.link_up()) {
                     // Output: idu_out!ON
                     port_message = true;
                 }
