@@ -53,12 +53,13 @@ struct OduState {
      */
     double sigma;
     OduStateName s;
+    bool lock;
     
     /**
      * Constructor
      */
-    explicit OduState(): sigma(std::numeric_limits<double>::infinity()), s(OduStateName::PASSIVE) {
-    }
+    explicit OduState(): sigma(std::numeric_limits<double>::infinity()), s(OduStateName::PASSIVE), lock(false) {
+   }
 };
 
 /**
@@ -69,7 +70,8 @@ struct OduState {
 std::ostream& operator<<(std::ostream &out, const OduState& state) {
     out << "{" 
             << "state=" << state.s << ", "
-            << "sigma=" << state.sigma 
+            << "sigma=" << state.sigma << ", "
+            << "lock=" << state.lock 
         << "}";
     return out;
 }
