@@ -1,5 +1,5 @@
 # Link main file to executable namee
-add_executable(${projectName} main.cpp)
+add_executable(${projectName} leo_user_link.cpp)
 # Examples
 # add_executable(counter_tester main_counter_tester.cpp)
 # add_executable(testcase_counter main_testcase_counter.cpp)
