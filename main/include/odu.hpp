@@ -118,8 +118,6 @@ public:
      */
     void internalTransition(OduState& state) const override {
 
-        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
-
         // Switch on state
         switch (state.s) {
             // Case: PASSIVE
@@ -143,16 +141,12 @@ public:
                 break;
         }
 
-        std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
-
     }
 
     /**
      * External transition function (delta_ext)
      */
     void externalTransition(OduState& state, double e) const override {
-
-        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
 
         /* Input Port Handling */
 
@@ -197,7 +191,6 @@ public:
         // Update sigma based on elapsed duration
         state.sigma -= e; 
 
-        std::cout << "ODU::" << __func__ << "::final state: " << state.s << std::endl;
     }
     
     
@@ -206,12 +199,8 @@ public:
      */
     void output(const OduState& state) const override {
 
-        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
-
         // Output corresponds to status of the lock
         signal_out->addMessage(state.lock);
-
-        std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
 
     }
 
