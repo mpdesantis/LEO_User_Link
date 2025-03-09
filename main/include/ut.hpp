@@ -35,14 +35,15 @@ struct Ut : public Coupled {
         auto odu2 = addComponent<Odu>("ODU2");
         auto idu = addComponent<Idu>("IDU");
 
+        // Internal port coupling
+        addCoupling(odu1->signal_out, idu->signal_in1);
+        addCoupling(odu2->signal_out, idu->signal_in2);
+
         // External port coupling
         addCoupling(beam_in1, odu1->beam_in);
         addCoupling(beam_in2, odu2->beam_in);
         addCoupling(idu->idu_out, ut_out);
 
-        // Internal port coupling
-        addCoupling(odu1->signal_out, idu->signal_in1);
-        addCoupling(odu2->signal_out, idu->signal_in2);
     }
 
 };
