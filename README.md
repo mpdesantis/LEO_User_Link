@@ -29,7 +29,7 @@ This repository's contents.
 * `env.sh`
     - Shell script defining additional environment variables for this repository.
 * `main/`
-    - C++ source and header files for this repository's main code.
+    - C++ source and header files for this repository's main code module, `leo_user_link`.
 * `output/`
     - Generated directory containing output logs from model simulation.
 * `run_all_simulations.sh`
@@ -64,12 +64,12 @@ $ . build_sim.sh
 ### Execute
 To execute this project's simulations, issue the following command:
 ```sh
-./run_all_simulations.sh
+$ ./run_all_simulations.sh
 ```
 Upon successful execution, corresponding output for each simulation binary will be found in the `output/` directory.
 
-TODO: Will need to update this when we start using input files for EFs.
 
 ## Notes
 * With permission and by instruction, this project uses the [blank project template](https://github.com/Sasisekhar/blank_project_rt) provided in the Cadmium V2 manual.
 * With permission and by instruction, this project is informed by the [sample project](https://github.com/Sasisekhar/DEVS_manual_example) provided in the Cadmium V2 manual.
+* Thanks!! 
