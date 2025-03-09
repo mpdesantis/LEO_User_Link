@@ -33,7 +33,7 @@ This repository's contents.
 * `output/`
     - Generated directory containing output logs from model simulation.
 * `run_all_simulations.sh`
-    - Shell script to run all available simulation binaries in `/bin`. 
+    - Shell script to run all available simulation binaries in `bin/`. 
 * `sample-output/`
     - Directory containing sample output logs from model simulation. These logs correspond to those excerpted in the project report (`docs/LEO_User_Link.pdf`), and are presented here in full.
 * `test/`
