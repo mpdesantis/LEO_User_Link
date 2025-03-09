@@ -64,6 +64,7 @@ struct OduState {
      */
     explicit OduState(): sigma(std::numeric_limits<double>::infinity()), s(OduStateName::PASSIVE), lock(false) {
    }
+
 };
 
 /**
@@ -94,7 +95,7 @@ public:
     /**
      * Constants
      */
-    static constexpr double ACQUIRE_LOCK_TIME = 8.00;
+    static constexpr double ACQUIRE_LOCK_TIME = 2.00;
     static constexpr double RELEASE_LOCK_TIME = 1.00;
 
     /**
@@ -103,7 +104,6 @@ public:
     Port<bool> beam_in;
     Port<bool> signal_out;
     
-
     /**
      * Constructor
      */
@@ -111,7 +111,6 @@ public:
         // Initialize ports
         beam_in = addInPort<bool>("beam_in");
         signal_out = addOutPort<bool>("signal_out");
-
     }
 
     /**
@@ -119,31 +118,32 @@ public:
      */
     void internalTransition(OduState& state) const override {
 
-        //std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
+        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
 
-        // Case: PASSIVE
-        if (state.s == OduStateName::PASSIVE) {
-            // Update state
-            state.s = OduStateName::ACQUIRE_LOCK;
-            // Update sigma
-            state.sigma = ACQUIRE_LOCK_TIME;
-        }
-        // Case: ACQUIRE_LOCK
-        else if (state.s == OduStateName::ACQUIRE_LOCK) {
-            // Update state
-            state.s = OduStateName::TX_RX;
-            // Update sigma
-            state.sigma += 1;
-        }
-        // Case: TX_RX
-        else {
-            // Update state
-            state.s = OduStateName::PASSIVE;
-            // Update sigma
-            state.sigma += 1;
+        // Switch on state
+        switch (state.s) {
+            // Case: PASSIVE
+            case OduStateName::PASSIVE:
+                state.s = OduStateName::ACQUIRE_LOCK;
+                break;
+            // Case: ACQUIRE_LOCK
+            case OduStateName::ACQUIRE_LOCK:
+                state.s = OduStateName::TX_RX;
+                break;
+            // Case: TX_RX
+            case OduStateName::TX_RX:
+                state.s = OduStateName::RELEASE_LOCK;
+                break;
+            // Case: RELEASE_LOCK
+            case OduStateName::RELEASE_LOCK:
+                state.s = OduStateName::PASSIVE;
+                break;
+            // Default:
+            default:
+                break;
         }
 
-        //std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
+        std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
 
     }
 
@@ -152,7 +152,7 @@ public:
      */
     void externalTransition(OduState& state, double e) const override {
 
-        //std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
+        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
 
         /* Input Port Handling */
 
@@ -168,30 +168,21 @@ public:
                 case OduStateName::PASSIVE:
                     // Case: beam_in?ON
                     if (port_message) {
-                        // Update state
+                        state.lock = true;
                         state.s = OduStateName::ACQUIRE_LOCK;
-                        // Update sigma
-                        state.sigma = ACQUIRE_LOCK_TIME;
-                    }
-                    break;
-                // Case: ACQUIRE_LOCK
-                case OduStateName::ACQUIRE_LOCK:
-                    // Case: beam_in?OFF
-                    if (!port_message) {
-                        // Update state
-                        state.s = OduStateName::PASSIVE;
-                        // Update sigma
-                        state.sigma = std::numeric_limits<double>::infinity();
                     }
                     break;
                 // Case: TX_RX
                 case OduStateName::TX_RX:
+                    // Case: beam_in?ON
+                    if (port_message) {
+                        state.lock = true;
+                        state.s = OduStateName::TX_RX;
+                    }
                     // Case: beam_in?OFF
-                    if (!port_message) {
-                        // Update state
-                        state.s = OduStateName::PASSIVE;
-                        // Update sigma
-                        state.sigma = std::numeric_limits<double>::infinity();
+                    else {
+                        state.lock = false;
+                        state.s = OduStateName::RELEASE_LOCK;
                     }
                     break;
                 // Default:
@@ -206,7 +197,7 @@ public:
         // Update sigma based on elapsed duration
         state.sigma -= e; 
 
-        //std::cout << "ODU::" << __func__ << "::final state: " << state.s << std::endl;
+        std::cout << "ODU::" << __func__ << "::final state: " << state.s << std::endl;
     }
     
     
@@ -215,31 +206,12 @@ public:
      */
     void output(const OduState& state) const override {
 
-        //std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
+        std::cout << "ODU::" << __func__ << " entry state: " << state.s << std::endl;
 
-        // Port message to write to port
-        bool port_message = false;
+        // Output corresponds to status of the lock
+        signal_out->addMessage(state.lock);
 
-        // Switch on state
-        switch (state.s) {
-            // Case: ACQUIRE_LOCK
-            case OduStateName::ACQUIRE_LOCK:
-                // Output: signal_out!ON
-                port_message = true;
-                break;
-            // Default:
-            // Case: PASSIVE
-            // Case: TX_RX
-            default:
-                // Output: signal_out!OFF
-                port_message = false;
-                break;
-        }
-
-        // Write the output port
-        signal_out->addMessage(port_message);
-
-        //std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
+        std::cout << "ODU::" << __func__ << " final state: " << state.s << std::endl;
 
     }
 
@@ -247,7 +219,22 @@ public:
      * Time advance function (ta)
      */
     [[nodiscard]] double timeAdvance(const OduState& state) const override {     
-        return state.sigma;
+        // Switch on state
+        switch (state.s) {
+            case OduStateName::PASSIVE:
+            case OduStateName::TX_RX:
+                return std::numeric_limits<double>::infinity();
+                break;
+            case OduStateName::ACQUIRE_LOCK:
+                return ACQUIRE_LOCK_TIME;
+                break;
+            case OduStateName::RELEASE_LOCK:
+                return RELEASE_LOCK_TIME;
+                break;
+            default:
+                return 1.0;
+                break;
+        }
     }
 
 };
