@@ -25,15 +25,15 @@ struct Ut : public Coupled {
      * @param id ID of the model.
      */
     Ut(const std::string& id) : Coupled(id) {
-        // Model declaration
-        auto idu = addComponent<Idu>("IDU");
-        auto odu1 = addComponent<Odu>("Odu1");
-        auto odu2 = addComponent<Odu>("Odu2");
-
         // Initialize external ports
         beam_in1 = addInPort<bool>("beam_in1");
         beam_in2 = addInPort<bool>("beam_in2");
         ut_out = addOutPort<bool>("ut_out");
+
+        // Model declaration
+        auto odu1 = addComponent<Odu>("ODU1");
+        auto odu2 = addComponent<Odu>("ODU2");
+        auto idu = addComponent<Idu>("IDU");
 
         // External port coupling
         addCoupling(beam_in1, odu1->beam_in);

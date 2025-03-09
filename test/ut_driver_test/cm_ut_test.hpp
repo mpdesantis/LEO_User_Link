@@ -10,14 +10,14 @@
 
 using namespace cadmium;
 
-struct CmIduTest : public Coupled {
+struct CmUtTest : public Coupled {
 
     /**
      * Constructor for top coupled model.
      *
      * @param id ID of the model.
      */
-    CmIduTest(const std::string& id) : Coupled(id) {
+    CmUtTest(const std::string& id) : Coupled(id) {
         auto driver1 = addComponent<driver::Driver>("DriverSatellite1");
         auto driver2 = addComponent<driver::Driver>("DriverSatellite2");
         auto ut = addComponent<Ut>("UT");
