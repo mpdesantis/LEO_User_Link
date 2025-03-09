@@ -1,5 +1,5 @@
 add_subdirectory(idu_driver_test)
 add_subdirectory(odu_driver_test)
-add_subdirectory(ut_driver_test)
 add_subdirectory(satellite_generator_test)
-
+add_subdirectory(ul_generator_test)
+add_subdirectory(ut_driver_test)
