@@ -1,360 +1,363 @@
 sep=;
 time;model_id;model_name;port_name;data
+
+# START BBM
+
 0;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
 0;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
 0;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
 0;6;Satellite2;;{state=PASSIVE, sigma=1}
 0;7;Satellite1;;{state=PASSIVE, sigma=1}
+
 1;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
 1;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
 1;6;Satellite2;beam_out;1
-1;6;Satellite2;;{state=ILLUMINATE, sigma=13.3877}
+1;6;Satellite2;;{state=ILLUMINATE, sigma=13.1467}
 1;7;Satellite1;beam_out;1
-1;7;Satellite1;;{state=ILLUMINATE, sigma=15.2012}
+1;7;Satellite1;;{state=ILLUMINATE, sigma=15.5439}
+
 3;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
 3;4;ODU2;signal_out;1
 3;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
 3;5;ODU1;signal_out;1
 3;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+
 4;3;IDU;idu_out;1
 4;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-14.3877;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-14.3877;6;Satellite2;beam_out;1
-14.3877;6;Satellite2;;{state=PASSIVE, sigma=10.4639}
-16.2012;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-16.2012;7;Satellite1;beam_out;1
-16.2012;7;Satellite1;;{state=PASSIVE, sigma=11.3077}
-24.8516;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-24.8516;6;Satellite2;beam_out;0
-24.8516;6;Satellite2;;{state=ILLUMINATE, sigma=10.6312}
-25.8516;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-25.8516;4;ODU2;signal_out;0
-25.8516;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-27.509;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-27.509;7;Satellite1;beam_out;0
-27.509;7;Satellite1;;{state=ILLUMINATE, sigma=14.9754}
-28.509;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-28.509;5;ODU1;signal_out;0
-28.509;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-29.009;3;IDU;idu_out;0
-29.009;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-35.4829;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-35.4829;6;Satellite2;beam_out;1
-35.4829;6;Satellite2;;{state=PASSIVE, sigma=6.58565}
-37.4829;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
-37.4829;4;ODU2;signal_out;1
-37.4829;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-38.4829;3;IDU;idu_out;1
-38.4829;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-42.0685;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-42.0685;6;Satellite2;beam_out;0
-42.0685;6;Satellite2;;{state=ILLUMINATE, sigma=10.8154}
-42.4844;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-42.4844;7;Satellite1;beam_out;1
-42.4844;7;Satellite1;;{state=PASSIVE, sigma=6.49001}
-43.0685;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-43.0685;4;ODU2;signal_out;0
-43.0685;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-43.5685;3;IDU;idu_out;0
-43.5685;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-44.4844;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
-44.4844;5;ODU1;signal_out;1
-44.4844;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-45.4844;3;IDU;idu_out;1
-45.4844;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-48.9744;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-48.9744;7;Satellite1;beam_out;0
-48.9744;7;Satellite1;;{state=ILLUMINATE, sigma=12.1849}
-49.9744;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-49.9744;5;ODU1;signal_out;0
-49.9744;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-50.4744;3;IDU;idu_out;0
-50.4744;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-52.8839;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-52.8839;6;Satellite2;beam_out;1
-52.8839;6;Satellite2;;{state=PASSIVE, sigma=7.74772}
-54.8839;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
-54.8839;4;ODU2;signal_out;1
-54.8839;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-55.8839;3;IDU;idu_out;1
-55.8839;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-60.6316;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-60.6316;6;Satellite2;beam_out;0
-60.6316;6;Satellite2;;{state=ILLUMINATE, sigma=12.9006}
-61.1593;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-61.1593;7;Satellite1;beam_out;1
-61.1593;7;Satellite1;;{state=PASSIVE, sigma=9.90236}
-61.6316;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-61.6316;4;ODU2;signal_out;0
-61.6316;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-62.1316;3;IDU;idu_out;0
-62.1316;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-63.1593;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
-63.1593;5;ODU1;signal_out;1
-63.1593;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-64.1593;3;IDU;idu_out;1
-64.1593;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-71.0617;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-71.0617;7;Satellite1;beam_out;0
-71.0617;7;Satellite1;;{state=ILLUMINATE, sigma=14.7859}
-72.0617;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-72.0617;5;ODU1;signal_out;0
-72.0617;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-72.5617;3;IDU;idu_out;0
-72.5617;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-73.5322;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-73.5322;6;Satellite2;beam_out;1
-73.5322;6;Satellite2;;{state=PASSIVE, sigma=6.32442}
-75.5322;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
-75.5322;4;ODU2;signal_out;1
-75.5322;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-76.5322;3;IDU;idu_out;1
-76.5322;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-79.8566;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-79.8566;6;Satellite2;beam_out;0
-79.8566;6;Satellite2;;{state=ILLUMINATE, sigma=8.63778}
-80.8566;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-80.8566;4;ODU2;signal_out;0
-80.8566;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-81.3566;3;IDU;idu_out;0
-81.3566;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-85.8476;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-85.8476;7;Satellite1;beam_out;1
-85.8476;7;Satellite1;;{state=PASSIVE, sigma=7.07552}
-87.8476;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
-87.8476;5;ODU1;signal_out;1
-87.8476;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-88.4944;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-88.4944;6;Satellite2;beam_out;1
-88.4944;6;Satellite2;;{state=PASSIVE, sigma=8.6678}
-88.8476;3;IDU;idu_out;1
-88.8476;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-90.4944;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
-90.4944;4;ODU2;signal_out;1
-90.4944;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-92.9231;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-92.9231;7;Satellite1;beam_out;0
-92.9231;7;Satellite1;;{state=ILLUMINATE, sigma=10.1398}
-93.9231;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-93.9231;5;ODU1;signal_out;0
-93.9231;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-97.1622;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-97.1622;6;Satellite2;beam_out;0
-97.1622;6;Satellite2;;{state=ILLUMINATE, sigma=11.6389}
-98.1622;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-98.1622;4;ODU2;signal_out;0
-98.1622;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-98.6622;3;IDU;idu_out;0
-98.6622;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-103.063;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-103.063;7;Satellite1;beam_out;1
-103.063;7;Satellite1;;{state=PASSIVE, sigma=8.56626}
-105.063;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
-105.063;5;ODU1;signal_out;1
-105.063;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-106.063;3;IDU;idu_out;1
-106.063;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-108.801;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-108.801;6;Satellite2;beam_out;1
-108.801;6;Satellite2;;{state=PASSIVE, sigma=6.92327}
-110.801;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
-110.801;4;ODU2;signal_out;1
-110.801;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-111.629;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-111.629;7;Satellite1;beam_out;0
-111.629;7;Satellite1;;{state=ILLUMINATE, sigma=8.57865}
-112.629;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-112.629;5;ODU1;signal_out;0
-112.629;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-115.724;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-115.724;6;Satellite2;beam_out;0
-115.724;6;Satellite2;;{state=ILLUMINATE, sigma=15.6502}
-116.724;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-116.724;4;ODU2;signal_out;0
-116.724;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-117.224;3;IDU;idu_out;0
-117.224;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-120.208;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-120.208;7;Satellite1;beam_out;1
-120.208;7;Satellite1;;{state=PASSIVE, sigma=9.71062}
-122.208;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
-122.208;5;ODU1;signal_out;1
-122.208;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-123.208;3;IDU;idu_out;1
-123.208;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-129.918;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-129.918;7;Satellite1;beam_out;0
-129.918;7;Satellite1;;{state=ILLUMINATE, sigma=15.9829}
-130.918;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-130.918;5;ODU1;signal_out;0
-130.918;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-131.375;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-131.375;6;Satellite2;beam_out;1
-131.375;6;Satellite2;;{state=PASSIVE, sigma=6.95001}
-131.418;3;IDU;idu_out;0
-131.418;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-133.375;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
-133.375;4;ODU2;signal_out;1
-133.375;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-134.375;3;IDU;idu_out;1
-134.375;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-138.325;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-138.325;6;Satellite2;beam_out;0
-138.325;6;Satellite2;;{state=ILLUMINATE, sigma=11.8667}
-139.325;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-139.325;4;ODU2;signal_out;0
-139.325;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-139.825;3;IDU;idu_out;0
-139.825;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-145.901;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-145.901;7;Satellite1;beam_out;1
-145.901;7;Satellite1;;{state=PASSIVE, sigma=9.23757}
-147.901;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
-147.901;5;ODU1;signal_out;1
-147.901;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-148.901;3;IDU;idu_out;1
-148.901;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-150.191;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-150.191;6;Satellite2;beam_out;1
-150.191;6;Satellite2;;{state=PASSIVE, sigma=10.9695}
-152.191;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
-152.191;4;ODU2;signal_out;1
-152.191;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-155.139;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-155.139;7;Satellite1;beam_out;0
-155.139;7;Satellite1;;{state=ILLUMINATE, sigma=10.1286}
-156.139;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-156.139;5;ODU1;signal_out;0
-156.139;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-161.161;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-161.161;6;Satellite2;beam_out;0
-161.161;6;Satellite2;;{state=ILLUMINATE, sigma=9.15192}
-162.161;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-162.161;4;ODU2;signal_out;0
-162.161;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-162.661;3;IDU;idu_out;0
-162.661;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-165.268;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-165.268;7;Satellite1;beam_out;1
-165.268;7;Satellite1;;{state=PASSIVE, sigma=6.77132}
-167.268;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
-167.268;5;ODU1;signal_out;1
-167.268;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-168.268;3;IDU;idu_out;1
-168.268;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-170.313;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-170.313;6;Satellite2;beam_out;1
-170.313;6;Satellite2;;{state=PASSIVE, sigma=8.80928}
-172.039;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-172.039;7;Satellite1;beam_out;0
-172.039;7;Satellite1;;{state=ILLUMINATE, sigma=12.1111}
-172.313;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
-172.313;4;ODU2;signal_out;1
-172.313;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-173.039;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-173.039;5;ODU1;signal_out;0
-173.039;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-179.122;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-179.122;6;Satellite2;beam_out;0
-179.122;6;Satellite2;;{state=ILLUMINATE, sigma=15.5399}
-180.122;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-180.122;4;ODU2;signal_out;0
-180.122;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-180.622;3;IDU;idu_out;0
-180.622;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-184.15;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-184.15;7;Satellite1;beam_out;1
-184.15;7;Satellite1;;{state=PASSIVE, sigma=10.2163}
-186.15;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
-186.15;5;ODU1;signal_out;1
-186.15;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-187.15;3;IDU;idu_out;1
-187.15;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-194.366;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-194.366;7;Satellite1;beam_out;0
-194.366;7;Satellite1;;{state=ILLUMINATE, sigma=9.03831}
-194.662;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-194.662;6;Satellite2;beam_out;1
-194.662;6;Satellite2;;{state=PASSIVE, sigma=7.6034}
-195.366;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-195.366;5;ODU1;signal_out;0
-195.366;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-195.866;3;IDU;idu_out;0
-195.866;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-196.662;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
-196.662;4;ODU2;signal_out;1
-196.662;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-197.662;3;IDU;idu_out;1
-197.662;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-202.265;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-202.265;6;Satellite2;beam_out;0
-202.265;6;Satellite2;;{state=ILLUMINATE, sigma=14.6491}
-203.265;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-203.265;4;ODU2;signal_out;0
-203.265;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-203.405;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-203.405;7;Satellite1;beam_out;1
-203.405;7;Satellite1;;{state=PASSIVE, sigma=7.65683}
-203.765;3;IDU;idu_out;0
-203.765;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-205.405;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
-205.405;5;ODU1;signal_out;1
-205.405;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-206.405;3;IDU;idu_out;1
-206.405;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-211.061;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-211.061;7;Satellite1;beam_out;0
-211.061;7;Satellite1;;{state=ILLUMINATE, sigma=12.8715}
-212.061;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-212.061;5;ODU1;signal_out;0
-212.061;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-212.561;3;IDU;idu_out;0
-212.561;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-216.914;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-216.914;6;Satellite2;beam_out;1
-216.914;6;Satellite2;;{state=PASSIVE, sigma=6.58452}
-218.914;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
-218.914;4;ODU2;signal_out;1
-218.914;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-219.914;3;IDU;idu_out;1
-219.914;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-223.499;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-223.499;6;Satellite2;beam_out;0
-223.499;6;Satellite2;;{state=ILLUMINATE, sigma=8.12476}
-223.933;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-223.933;7;Satellite1;beam_out;1
-223.933;7;Satellite1;;{state=PASSIVE, sigma=7.17563}
-224.499;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-224.499;4;ODU2;signal_out;0
-224.499;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-224.999;3;IDU;idu_out;0
-224.999;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-225.933;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
-225.933;5;ODU1;signal_out;1
-225.933;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-226.933;3;IDU;idu_out;1
-226.933;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-231.109;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-231.109;7;Satellite1;beam_out;0
-231.109;7;Satellite1;;{state=ILLUMINATE, sigma=14.4406}
-231.624;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
-231.624;6;Satellite2;beam_out;1
-231.624;6;Satellite2;;{state=PASSIVE, sigma=8.11723}
-232.109;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
-232.109;5;ODU1;signal_out;0
-232.109;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-232.609;3;IDU;idu_out;0
-232.609;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-233.624;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
-233.624;4;ODU2;signal_out;1
-233.624;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-234.624;3;IDU;idu_out;1
-234.624;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-239.741;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-239.741;6;Satellite2;beam_out;0
-239.741;6;Satellite2;;{state=ILLUMINATE, sigma=10.197}
-239.741;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-239.741;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
-239.741;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-239.741;6;Satellite2;;{state=ILLUMINATE, sigma=10.197}
-239.741;7;Satellite1;;{state=ILLUMINATE, sigma=14.4406}
+
+14.1467;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+14.1467;6;Satellite2;beam_out;0
+14.1467;6;Satellite2;;{state=PASSIVE, sigma=7.79469}
+
+15.1467;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+15.1467;4;ODU2;signal_out;0
+15.1467;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+
+16.5439;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+16.5439;7;Satellite1;beam_out;0
+16.5439;7;Satellite1;;{state=PASSIVE, sigma=7.83794}
+
+17.5439;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+17.5439;5;ODU1;signal_out;0
+17.5439;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+
+18.0439;3;IDU;idu_out;0
+18.0439;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+
+21.9414;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+21.9414;6;Satellite2;beam_out;1
+21.9414;6;Satellite2;;{state=ILLUMINATE, sigma=12.6906}
+
+23.9414;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+23.9414;4;ODU2;signal_out;1
+23.9414;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+
+24.3819;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+24.3819;7;Satellite1;beam_out;1
+24.3819;7;Satellite1;;{state=ILLUMINATE, sigma=13.6679}
+
+24.9414;3;IDU;idu_out;1
+24.9414;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+
+# END BBM
+
+26.3819;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+26.3819;5;ODU1;signal_out;1
+26.3819;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+
+34.6321;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+34.6321;6;Satellite2;beam_out;0
+34.6321;6;Satellite2;;{state=PASSIVE, sigma=6.40077}
+
+35.6321;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+35.6321;4;ODU2;signal_out;0
+35.6321;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+38.0498;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+38.0498;7;Satellite1;beam_out;0
+38.0498;7;Satellite1;;{state=PASSIVE, sigma=10.6156}
+39.0498;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+39.0498;5;ODU1;signal_out;0
+39.0498;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+39.5498;3;IDU;idu_out;0
+39.5498;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+41.0328;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+41.0328;6;Satellite2;beam_out;1
+41.0328;6;Satellite2;;{state=ILLUMINATE, sigma=14.4395}
+43.0328;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+43.0328;4;ODU2;signal_out;1
+43.0328;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+44.0328;3;IDU;idu_out;1
+44.0328;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+48.6654;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+48.6654;7;Satellite1;beam_out;1
+48.6654;7;Satellite1;;{state=ILLUMINATE, sigma=12.9001}
+50.6654;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+50.6654;5;ODU1;signal_out;1
+50.6654;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+55.4723;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+55.4723;6;Satellite2;beam_out;0
+55.4723;6;Satellite2;;{state=PASSIVE, sigma=7.8884}
+56.4723;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+56.4723;4;ODU2;signal_out;0
+56.4723;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+61.5655;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+61.5655;7;Satellite1;beam_out;0
+61.5655;7;Satellite1;;{state=PASSIVE, sigma=9.08969}
+62.5655;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+62.5655;5;ODU1;signal_out;0
+62.5655;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+63.0655;3;IDU;idu_out;0
+63.0655;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+63.3607;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+63.3607;6;Satellite2;beam_out;1
+63.3607;6;Satellite2;;{state=ILLUMINATE, sigma=8.13923}
+65.3607;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+65.3607;4;ODU2;signal_out;1
+65.3607;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+66.3607;3;IDU;idu_out;1
+66.3607;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+70.6552;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+70.6552;7;Satellite1;beam_out;1
+70.6552;7;Satellite1;;{state=ILLUMINATE, sigma=10.9167}
+71.4999;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+71.4999;6;Satellite2;beam_out;0
+71.4999;6;Satellite2;;{state=PASSIVE, sigma=8.48173}
+72.4999;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+72.4999;4;ODU2;signal_out;0
+72.4999;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+72.6552;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+72.6552;5;ODU1;signal_out;1
+72.6552;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+73.1552;3;IDU;idu_out;0
+73.1552;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+79.9817;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+79.9817;6;Satellite2;beam_out;1
+79.9817;6;Satellite2;;{state=ILLUMINATE, sigma=8.00713}
+81.5719;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+81.5719;7;Satellite1;beam_out;0
+81.5719;7;Satellite1;;{state=PASSIVE, sigma=10.6405}
+81.9817;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+81.9817;4;ODU2;signal_out;1
+81.9817;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+82.5719;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+82.5719;5;ODU1;signal_out;0
+82.5719;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+83.5719;3;IDU;idu_out;1
+83.5719;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+87.9888;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+87.9888;6;Satellite2;beam_out;0
+87.9888;6;Satellite2;;{state=PASSIVE, sigma=10.5958}
+88.9888;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+88.9888;4;ODU2;signal_out;0
+88.9888;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+89.4888;3;IDU;idu_out;0
+89.4888;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+92.2124;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+92.2124;7;Satellite1;beam_out;1
+92.2124;7;Satellite1;;{state=ILLUMINATE, sigma=9.40438}
+94.2124;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+94.2124;5;ODU1;signal_out;1
+94.2124;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+95.2124;3;IDU;idu_out;1
+95.2124;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+98.5846;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+98.5846;6;Satellite2;beam_out;1
+98.5846;6;Satellite2;;{state=ILLUMINATE, sigma=10.557}
+100.585;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+100.585;4;ODU2;signal_out;1
+100.585;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+101.617;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+101.617;7;Satellite1;beam_out;0
+101.617;7;Satellite1;;{state=PASSIVE, sigma=9.90132}
+102.617;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+102.617;5;ODU1;signal_out;0
+102.617;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+109.142;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+109.142;6;Satellite2;beam_out;0
+109.142;6;Satellite2;;{state=PASSIVE, sigma=11.2334}
+110.142;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+110.142;4;ODU2;signal_out;0
+110.142;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+110.642;3;IDU;idu_out;0
+110.642;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+111.518;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+111.518;7;Satellite1;beam_out;1
+111.518;7;Satellite1;;{state=ILLUMINATE, sigma=10.4581}
+113.518;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+113.518;5;ODU1;signal_out;1
+113.518;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+114.518;3;IDU;idu_out;1
+114.518;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+120.375;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+120.375;6;Satellite2;beam_out;1
+120.375;6;Satellite2;;{state=ILLUMINATE, sigma=8.79742}
+121.976;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+121.976;7;Satellite1;beam_out;0
+121.976;7;Satellite1;;{state=PASSIVE, sigma=9.79726}
+122.375;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+122.375;4;ODU2;signal_out;1
+122.375;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+122.976;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+122.976;5;ODU1;signal_out;0
+122.976;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+129.172;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+129.172;6;Satellite2;beam_out;0
+129.172;6;Satellite2;;{state=PASSIVE, sigma=7.34357}
+130.172;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+130.172;4;ODU2;signal_out;0
+130.172;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+130.672;3;IDU;idu_out;0
+130.672;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+131.774;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+131.774;7;Satellite1;beam_out;1
+131.774;7;Satellite1;;{state=ILLUMINATE, sigma=12.4218}
+133.774;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+133.774;5;ODU1;signal_out;1
+133.774;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+134.774;3;IDU;idu_out;1
+134.774;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+136.516;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+136.516;6;Satellite2;beam_out;1
+136.516;6;Satellite2;;{state=ILLUMINATE, sigma=12.5078}
+138.516;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+138.516;4;ODU2;signal_out;1
+138.516;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+144.195;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+144.195;7;Satellite1;beam_out;0
+144.195;7;Satellite1;;{state=PASSIVE, sigma=8.02567}
+145.195;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+145.195;5;ODU1;signal_out;0
+145.195;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+149.024;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+149.024;6;Satellite2;beam_out;0
+149.024;6;Satellite2;;{state=PASSIVE, sigma=9.48445}
+150.024;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+150.024;4;ODU2;signal_out;0
+150.024;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+150.524;3;IDU;idu_out;0
+150.524;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+152.221;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+152.221;7;Satellite1;beam_out;1
+152.221;7;Satellite1;;{state=ILLUMINATE, sigma=14.3145}
+154.221;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+154.221;5;ODU1;signal_out;1
+154.221;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+155.221;3;IDU;idu_out;1
+155.221;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+158.508;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+158.508;6;Satellite2;beam_out;1
+158.508;6;Satellite2;;{state=ILLUMINATE, sigma=9.42398}
+160.508;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+160.508;4;ODU2;signal_out;1
+160.508;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+166.535;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+166.535;7;Satellite1;beam_out;0
+166.535;7;Satellite1;;{state=PASSIVE, sigma=7.35001}
+167.535;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+167.535;5;ODU1;signal_out;0
+167.535;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+167.932;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+167.932;6;Satellite2;beam_out;0
+167.932;6;Satellite2;;{state=PASSIVE, sigma=10.637}
+168.932;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+168.932;4;ODU2;signal_out;0
+168.932;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+169.432;3;IDU;idu_out;0
+169.432;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+173.885;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+173.885;7;Satellite1;beam_out;1
+173.885;7;Satellite1;;{state=ILLUMINATE, sigma=11.3996}
+175.885;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+175.885;5;ODU1;signal_out;1
+175.885;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+176.885;3;IDU;idu_out;1
+176.885;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+178.569;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+178.569;6;Satellite2;beam_out;1
+178.569;6;Satellite2;;{state=ILLUMINATE, sigma=8.67094}
+180.569;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+180.569;4;ODU2;signal_out;1
+180.569;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+185.285;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+185.285;7;Satellite1;beam_out;0
+185.285;7;Satellite1;;{state=PASSIVE, sigma=10.1391}
+186.285;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+186.285;5;ODU1;signal_out;0
+186.285;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+187.24;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+187.24;6;Satellite2;beam_out;0
+187.24;6;Satellite2;;{state=PASSIVE, sigma=11.1492}
+188.24;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+188.24;4;ODU2;signal_out;0
+188.24;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+188.74;3;IDU;idu_out;0
+188.74;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+195.424;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+195.424;7;Satellite1;beam_out;1
+195.424;7;Satellite1;;{state=ILLUMINATE, sigma=9.50499}
+197.424;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+197.424;5;ODU1;signal_out;1
+197.424;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+198.389;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+198.389;6;Satellite2;beam_out;1
+198.389;6;Satellite2;;{state=ILLUMINATE, sigma=12.1947}
+198.424;3;IDU;idu_out;1
+198.424;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+200.389;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+200.389;4;ODU2;signal_out;1
+200.389;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+204.929;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+204.929;7;Satellite1;beam_out;0
+204.929;7;Satellite1;;{state=PASSIVE, sigma=7.57809}
+205.929;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+205.929;5;ODU1;signal_out;0
+205.929;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+210.584;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+210.584;6;Satellite2;beam_out;0
+210.584;6;Satellite2;;{state=PASSIVE, sigma=11.3405}
+211.584;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+211.584;4;ODU2;signal_out;0
+211.584;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+212.084;3;IDU;idu_out;0
+212.084;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+212.507;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+212.507;7;Satellite1;beam_out;1
+212.507;7;Satellite1;;{state=ILLUMINATE, sigma=9.72081}
+214.507;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+214.507;5;ODU1;signal_out;1
+214.507;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+215.507;3;IDU;idu_out;1
+215.507;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+221.925;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+221.925;6;Satellite2;beam_out;1
+221.925;6;Satellite2;;{state=ILLUMINATE, sigma=13.3134}
+222.228;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+222.228;7;Satellite1;beam_out;0
+222.228;7;Satellite1;;{state=PASSIVE, sigma=10.861}
+223.228;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+223.228;5;ODU1;signal_out;0
+223.228;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+223.728;3;IDU;idu_out;0
+223.728;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+223.925;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+223.925;4;ODU2;signal_out;1
+223.925;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+224.925;3;IDU;idu_out;1
+224.925;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+233.089;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+233.089;7;Satellite1;beam_out;1
+233.089;7;Satellite1;;{state=ILLUMINATE, sigma=12.1756}
+235.089;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+235.089;5;ODU1;signal_out;1
+235.089;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+235.238;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+235.238;6;Satellite2;beam_out;0
+235.238;6;Satellite2;;{state=PASSIVE, sigma=7.46534}
+236.238;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+236.238;4;ODU2;signal_out;0
+236.238;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+236.238;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+236.238;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+236.238;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+236.238;6;Satellite2;;{state=PASSIVE, sigma=7.46534}
+236.238;7;Satellite1;;{state=ILLUMINATE, sigma=12.1756}
