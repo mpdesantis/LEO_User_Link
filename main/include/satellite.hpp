@@ -114,7 +114,7 @@ public:
             // Update state
             state.s = SatelliteStateName::ILLUMINATE;
             // Update signal indicator
-            state.signal = false;
+            state.signal = true;
             // Update sigma 
             randomizeSigma(state, ILLUMINATE_TIME_MIN, ILLUMINATE_TIME_MAX);
         }
@@ -123,7 +123,7 @@ public:
             // Update state
             state.s = SatelliteStateName::PASSIVE;
             // Update signal indicator
-            state.signal = true;
+            state.signal = false;
             // Update sigma
             randomizeSigma(state, PASSIVE_TIME_MIN, PASSIVE_TIME_MAX);
         }
