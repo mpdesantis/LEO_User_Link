@@ -1,74 +1,54 @@
 sep=;
 time;model_id;model_name;port_name;data
-
-# START BBM
-
 0;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
 0;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
 0;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
 0;6;Satellite2;;{state=PASSIVE, sigma=1}
 0;7;Satellite1;;{state=PASSIVE, sigma=1}
-
 1;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
 1;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
 1;6;Satellite2;beam_out;1
 1;6;Satellite2;;{state=ILLUMINATE, sigma=13.1467}
 1;7;Satellite1;beam_out;1
 1;7;Satellite1;;{state=ILLUMINATE, sigma=15.5439}
-
 3;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
 3;4;ODU2;signal_out;1
 3;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
 3;5;ODU1;signal_out;1
 3;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-
 4;3;IDU;idu_out;1
 4;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
-
 14.1467;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
 14.1467;6;Satellite2;beam_out;0
 14.1467;6;Satellite2;;{state=PASSIVE, sigma=7.79469}
-
 15.1467;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
 15.1467;4;ODU2;signal_out;0
 15.1467;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
-
 16.5439;5;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
 16.5439;7;Satellite1;beam_out;0
 16.5439;7;Satellite1;;{state=PASSIVE, sigma=7.83794}
-
 17.5439;3;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
 17.5439;5;ODU1;signal_out;0
 17.5439;5;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
-
 18.0439;3;IDU;idu_out;0
 18.0439;3;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
-
 21.9414;4;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
 21.9414;6;Satellite2;beam_out;1
 21.9414;6;Satellite2;;{state=ILLUMINATE, sigma=12.6906}
-
 23.9414;3;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
 23.9414;4;ODU2;signal_out;1
 23.9414;4;ODU2;;{state=TX_RX, sigma=inf, lock=1}
-
 24.3819;5;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
 24.3819;7;Satellite1;beam_out;1
 24.3819;7;Satellite1;;{state=ILLUMINATE, sigma=13.6679}
-
 24.9414;3;IDU;idu_out;1
 24.9414;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
-
-# END BBM
-
 26.3819;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
 26.3819;5;ODU1;signal_out;1
 26.3819;5;ODU1;;{state=TX_RX, sigma=inf, lock=1}
-
 34.6321;4;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
 34.6321;6;Satellite2;beam_out;0
 34.6321;6;Satellite2;;{state=PASSIVE, sigma=6.40077}
-
 35.6321;3;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
 35.6321;4;ODU2;signal_out;0
 35.6321;4;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
