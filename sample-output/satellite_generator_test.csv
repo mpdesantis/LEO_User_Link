@@ -1,0 +1,30 @@
+sep=;
+time;model_id;model_name;port_name;data
+0;1;Satellite2;;{state=PASSIVE, sigma=1}
+0;2;Satellite1;;{state=PASSIVE, sigma=1}
+1;1;Satellite2;beam_out;1
+1;1;Satellite2;;{state=ILLUMINATE, sigma=11.4568}
+1;2;Satellite1;beam_out;1
+1;2;Satellite1;;{state=ILLUMINATE, sigma=10.5245}
+11.5245;2;Satellite1;beam_out;0
+11.5245;2;Satellite1;;{state=PASSIVE, sigma=7.10356}
+12.4568;1;Satellite2;beam_out;0
+12.4568;1;Satellite2;;{state=PASSIVE, sigma=11.9165}
+18.6281;2;Satellite1;beam_out;1
+18.6281;2;Satellite1;;{state=ILLUMINATE, sigma=10.0093}
+24.3733;1;Satellite2;beam_out;1
+24.3733;1;Satellite2;;{state=ILLUMINATE, sigma=11.3488}
+28.6374;2;Satellite1;beam_out;0
+28.6374;2;Satellite1;;{state=PASSIVE, sigma=9.97932}
+35.7221;1;Satellite2;beam_out;0
+35.7221;1;Satellite2;;{state=PASSIVE, sigma=11.2715}
+38.6167;2;Satellite1;beam_out;1
+38.6167;2;Satellite1;;{state=ILLUMINATE, sigma=9.57373}
+46.9936;1;Satellite2;beam_out;1
+46.9936;1;Satellite2;;{state=ILLUMINATE, sigma=14.9086}
+48.1904;2;Satellite1;beam_out;0
+48.1904;2;Satellite1;;{state=PASSIVE, sigma=7.59778}
+55.7882;2;Satellite1;beam_out;1
+55.7882;2;Satellite1;;{state=ILLUMINATE, sigma=15.225}
+55.7882;1;Satellite2;;{state=ILLUMINATE, sigma=14.9086}
+55.7882;2;Satellite1;;{state=ILLUMINATE, sigma=15.225}

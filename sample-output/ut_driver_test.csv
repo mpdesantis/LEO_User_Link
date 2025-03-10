@@ -1,0 +1,677 @@
+sep=;
+time;model_id;model_name;port_name;data
+0;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+0;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+0;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+0;5;DriverSatellite2;;{state=SENDING, sigma=1}
+0;6;DriverSatellite1;;{state=SENDING, sigma=1}
+1;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+1;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+1;5;DriverSatellite2;test_out;0
+1;5;DriverSatellite2;;{state=SENDING, sigma=6.6224}
+1;6;DriverSatellite1;test_out;0
+1;6;DriverSatellite1;;{state=SENDING, sigma=0.815601}
+1.8156;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+1.8156;6;DriverSatellite1;test_out;1
+1.8156;6;DriverSatellite1;;{state=SENDING, sigma=1.63989}
+3.45549;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+3.45549;6;DriverSatellite1;test_out;0
+3.45549;6;DriverSatellite1;;{state=SENDING, sigma=2.37464}
+5.45549;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+5.45549;4;ODU1;signal_out;1
+5.45549;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+5.83013;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+5.83013;6;DriverSatellite1;test_out;1
+5.83013;6;DriverSatellite1;;{state=SENDING, sigma=1.35722}
+6.45549;2;IDU;idu_out;1
+6.45549;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+7.18735;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+7.18735;6;DriverSatellite1;test_out;0
+7.18735;6;DriverSatellite1;;{state=SENDING, sigma=7.64438}
+7.6224;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+7.6224;5;DriverSatellite2;test_out;1
+7.6224;5;DriverSatellite2;;{state=SENDING, sigma=1.31364}
+8.18735;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+8.18735;4;ODU1;signal_out;0
+8.18735;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+8.68735;2;IDU;idu_out;0
+8.68735;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+8.93604;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+8.93604;5;DriverSatellite2;test_out;0
+8.93604;5;DriverSatellite2;;{state=SENDING, sigma=1.79832}
+10.7344;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+10.7344;5;DriverSatellite2;test_out;1
+10.7344;5;DriverSatellite2;;{state=SENDING, sigma=5.63909}
+12.7344;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+12.7344;3;ODU2;signal_out;1
+12.7344;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+13.7344;2;IDU;idu_out;1
+13.7344;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+14.8317;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+14.8317;6;DriverSatellite1;test_out;1
+14.8317;6;DriverSatellite1;;{state=SENDING, sigma=4.20243}
+16.3735;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+16.3735;5;DriverSatellite2;test_out;0
+16.3735;5;DriverSatellite2;;{state=SENDING, sigma=5.33867}
+16.8317;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+16.8317;4;ODU1;signal_out;1
+16.8317;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+17.3735;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+17.3735;3;ODU2;signal_out;0
+17.3735;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+19.0342;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+19.0342;6;DriverSatellite1;test_out;0
+19.0342;6;DriverSatellite1;;{state=SENDING, sigma=7.47777}
+20.0342;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+20.0342;4;ODU1;signal_out;0
+20.0342;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+20.5342;2;IDU;idu_out;0
+20.5342;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+21.7121;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+21.7121;5;DriverSatellite2;test_out;1
+21.7121;5;DriverSatellite2;;{state=SENDING, sigma=2.88352}
+23.7121;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+23.7121;3;ODU2;signal_out;1
+23.7121;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+24.5956;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+24.5956;5;DriverSatellite2;test_out;0
+24.5956;5;DriverSatellite2;;{state=SENDING, sigma=6.1395}
+24.7121;2;IDU;idu_out;1
+24.7121;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+25.5956;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+25.5956;3;ODU2;signal_out;0
+25.5956;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+26.0956;2;IDU;idu_out;0
+26.0956;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+26.5119;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+26.5119;6;DriverSatellite1;test_out;1
+26.5119;6;DriverSatellite1;;{state=SENDING, sigma=7.70226}
+28.5119;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+28.5119;4;ODU1;signal_out;1
+28.5119;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+29.5119;2;IDU;idu_out;1
+29.5119;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+30.7351;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+30.7351;5;DriverSatellite2;test_out;1
+30.7351;5;DriverSatellite2;;{state=SENDING, sigma=2.44227}
+32.7351;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+32.7351;3;ODU2;signal_out;1
+32.7351;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+33.1774;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+33.1774;5;DriverSatellite2;test_out;0
+33.1774;5;DriverSatellite2;;{state=SENDING, sigma=3.96293}
+34.1774;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+34.1774;3;ODU2;signal_out;0
+34.1774;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+34.2142;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+34.2142;6;DriverSatellite1;test_out;0
+34.2142;6;DriverSatellite1;;{state=SENDING, sigma=6.1054}
+35.2142;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+35.2142;4;ODU1;signal_out;0
+35.2142;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+35.7142;2;IDU;idu_out;0
+35.7142;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+37.1404;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+37.1404;5;DriverSatellite2;test_out;1
+37.1404;5;DriverSatellite2;;{state=SENDING, sigma=7.88928}
+39.1404;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+39.1404;3;ODU2;signal_out;1
+39.1404;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+40.1404;2;IDU;idu_out;1
+40.1404;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+40.3196;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+40.3196;6;DriverSatellite1;test_out;1
+40.3196;6;DriverSatellite1;;{state=SENDING, sigma=1.27351}
+41.5931;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+41.5931;6;DriverSatellite1;test_out;0
+41.5931;6;DriverSatellite1;;{state=SENDING, sigma=3.10177}
+43.5931;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+43.5931;4;ODU1;signal_out;1
+43.5931;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+44.6949;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+44.6949;6;DriverSatellite1;test_out;1
+44.6949;6;DriverSatellite1;;{state=SENDING, sigma=1.22079}
+45.0296;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+45.0296;5;DriverSatellite2;test_out;0
+45.0296;5;DriverSatellite2;;{state=SENDING, sigma=3.8273}
+45.9157;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+45.9157;6;DriverSatellite1;test_out;0
+45.9157;6;DriverSatellite1;;{state=SENDING, sigma=4.53325}
+46.0296;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+46.0296;3;ODU2;signal_out;0
+46.0296;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+46.9157;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+46.9157;4;ODU1;signal_out;0
+46.9157;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+47.4157;2;IDU;idu_out;0
+47.4157;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+48.8569;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+48.8569;5;DriverSatellite2;test_out;1
+48.8569;5;DriverSatellite2;;{state=SENDING, sigma=2.57991}
+50.4489;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+50.4489;6;DriverSatellite1;test_out;1
+50.4489;6;DriverSatellite1;;{state=SENDING, sigma=4.71073}
+50.8569;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+50.8569;3;ODU2;signal_out;1
+50.8569;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+51.4368;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+51.4368;5;DriverSatellite2;test_out;0
+51.4368;5;DriverSatellite2;;{state=SENDING, sigma=7.1913}
+51.8569;2;IDU;idu_out;1
+51.8569;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+52.4368;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+52.4368;3;ODU2;signal_out;0
+52.4368;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+52.4489;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+52.4489;4;ODU1;signal_out;1
+52.4489;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+52.9489;2;IDU;idu_out;0
+52.9489;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+55.1596;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+55.1596;6;DriverSatellite1;test_out;0
+55.1596;6;DriverSatellite1;;{state=SENDING, sigma=2.02008}
+56.1596;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+56.1596;4;ODU1;signal_out;0
+56.1596;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+57.1797;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+57.1797;6;DriverSatellite1;test_out;1
+57.1797;6;DriverSatellite1;;{state=SENDING, sigma=7.81487}
+58.6281;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+58.6281;5;DriverSatellite2;test_out;1
+58.6281;5;DriverSatellite2;;{state=SENDING, sigma=7.13428}
+59.1797;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+59.1797;4;ODU1;signal_out;1
+59.1797;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+60.1797;2;IDU;idu_out;1
+60.1797;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+60.6281;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+60.6281;3;ODU2;signal_out;1
+60.6281;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+64.9946;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+64.9946;6;DriverSatellite1;test_out;0
+64.9946;6;DriverSatellite1;;{state=SENDING, sigma=1.48406}
+65.7624;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+65.7624;5;DriverSatellite2;test_out;0
+65.7624;5;DriverSatellite2;;{state=SENDING, sigma=2.76346}
+65.9946;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+65.9946;4;ODU1;signal_out;0
+65.9946;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+66.4787;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+66.4787;6;DriverSatellite1;test_out;1
+66.4787;6;DriverSatellite1;;{state=SENDING, sigma=3.60908}
+66.7624;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+66.7624;3;ODU2;signal_out;0
+66.7624;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+67.2624;2;IDU;idu_out;0
+67.2624;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+68.4787;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+68.4787;4;ODU1;signal_out;1
+68.4787;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+68.5259;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+68.5259;5;DriverSatellite2;test_out;1
+68.5259;5;DriverSatellite2;;{state=SENDING, sigma=2.78297}
+69.4787;2;IDU;idu_out;1
+69.4787;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+70.0877;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+70.0877;6;DriverSatellite1;test_out;0
+70.0877;6;DriverSatellite1;;{state=SENDING, sigma=5.20114}
+70.5259;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+70.5259;3;ODU2;signal_out;1
+70.5259;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+71.0877;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+71.0877;4;ODU1;signal_out;0
+71.0877;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+71.3088;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+71.3088;5;DriverSatellite2;test_out;0
+71.3088;5;DriverSatellite2;;{state=SENDING, sigma=1.36041}
+72.3088;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+72.3088;3;ODU2;signal_out;0
+72.3088;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+72.6693;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+72.6693;5;DriverSatellite2;test_out;1
+72.6693;5;DriverSatellite2;;{state=SENDING, sigma=1.00405}
+72.8088;2;IDU;idu_out;0
+72.8088;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+73.6733;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+73.6733;5;DriverSatellite2;test_out;0
+73.6733;5;DriverSatellite2;;{state=SENDING, sigma=6.62595}
+75.2889;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+75.2889;6;DriverSatellite1;test_out;1
+75.2889;6;DriverSatellite1;;{state=SENDING, sigma=7.57204}
+75.6733;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+75.6733;3;ODU2;signal_out;1
+75.6733;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+76.6733;2;IDU;idu_out;1
+76.6733;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+77.2889;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+77.2889;4;ODU1;signal_out;1
+77.2889;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+80.2993;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+80.2993;5;DriverSatellite2;test_out;1
+80.2993;5;DriverSatellite2;;{state=SENDING, sigma=1.44637}
+81.7456;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+81.7456;5;DriverSatellite2;test_out;0
+81.7456;5;DriverSatellite2;;{state=SENDING, sigma=5.24401}
+82.7456;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+82.7456;3;ODU2;signal_out;0
+82.7456;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+82.8609;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+82.8609;6;DriverSatellite1;test_out;0
+82.8609;6;DriverSatellite1;;{state=SENDING, sigma=0.817873}
+83.6788;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+83.6788;6;DriverSatellite1;test_out;1
+83.6788;6;DriverSatellite1;;{state=SENDING, sigma=4.38539}
+84.6788;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+84.6788;4;ODU1;signal_out;0
+84.6788;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+85.1788;2;IDU;idu_out;0
+85.1788;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+86.9896;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+86.9896;5;DriverSatellite2;test_out;1
+86.9896;5;DriverSatellite2;;{state=SENDING, sigma=0.665707}
+87.6553;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+87.6553;5;DriverSatellite2;test_out;0
+87.6553;5;DriverSatellite2;;{state=SENDING, sigma=4.52697}
+88.0642;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+88.0642;6;DriverSatellite1;test_out;0
+88.0642;6;DriverSatellite1;;{state=SENDING, sigma=4.29347}
+89.6553;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+89.6553;3;ODU2;signal_out;1
+89.6553;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+90.6553;2;IDU;idu_out;1
+90.6553;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+92.1823;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+92.1823;5;DriverSatellite2;test_out;1
+92.1823;5;DriverSatellite2;;{state=SENDING, sigma=4.17024}
+92.3577;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+92.3577;6;DriverSatellite1;test_out;1
+92.3577;6;DriverSatellite1;;{state=SENDING, sigma=7.11392}
+94.3577;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+94.3577;4;ODU1;signal_out;1
+94.3577;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+96.3525;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+96.3525;5;DriverSatellite2;test_out;0
+96.3525;5;DriverSatellite2;;{state=SENDING, sigma=6.67357}
+97.3525;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+97.3525;3;ODU2;signal_out;0
+97.3525;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+99.4716;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+99.4716;6;DriverSatellite1;test_out;0
+99.4716;6;DriverSatellite1;;{state=SENDING, sigma=6.65598}
+100.472;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+100.472;4;ODU1;signal_out;0
+100.472;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+100.972;2;IDU;idu_out;0
+100.972;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+103.026;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+103.026;5;DriverSatellite2;test_out;1
+103.026;5;DriverSatellite2;;{state=SENDING, sigma=7.3263}
+105.026;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+105.026;3;ODU2;signal_out;1
+105.026;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+106.026;2;IDU;idu_out;1
+106.026;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+106.128;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+106.128;6;DriverSatellite1;test_out;1
+106.128;6;DriverSatellite1;;{state=SENDING, sigma=7.48058}
+108.128;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+108.128;4;ODU1;signal_out;1
+108.128;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+110.352;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+110.352;5;DriverSatellite2;test_out;0
+110.352;5;DriverSatellite2;;{state=SENDING, sigma=5.70431}
+111.352;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+111.352;3;ODU2;signal_out;0
+111.352;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+113.608;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+113.608;6;DriverSatellite1;test_out;0
+113.608;6;DriverSatellite1;;{state=SENDING, sigma=1.7265}
+114.608;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+114.608;4;ODU1;signal_out;0
+114.608;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+115.108;2;IDU;idu_out;0
+115.108;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+115.335;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+115.335;6;DriverSatellite1;test_out;1
+115.335;6;DriverSatellite1;;{state=SENDING, sigma=3.18881}
+116.057;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+116.057;5;DriverSatellite2;test_out;1
+116.057;5;DriverSatellite2;;{state=SENDING, sigma=4.18544}
+117.335;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+117.335;4;ODU1;signal_out;1
+117.335;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+118.057;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+118.057;3;ODU2;signal_out;1
+118.057;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+118.523;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+118.523;6;DriverSatellite1;test_out;0
+118.523;6;DriverSatellite1;;{state=SENDING, sigma=4.50819}
+119.057;2;IDU;idu_out;1
+119.057;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+119.523;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+119.523;4;ODU1;signal_out;0
+119.523;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+120.023;2;IDU;idu_out;0
+120.023;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+120.242;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+120.242;5;DriverSatellite2;test_out;0
+120.242;5;DriverSatellite2;;{state=SENDING, sigma=7.25212}
+121.242;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+121.242;3;ODU2;signal_out;0
+121.242;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+123.032;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+123.032;6;DriverSatellite1;test_out;1
+123.032;6;DriverSatellite1;;{state=SENDING, sigma=3.72141}
+125.032;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+125.032;4;ODU1;signal_out;1
+125.032;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+126.032;2;IDU;idu_out;1
+126.032;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+126.753;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+126.753;6;DriverSatellite1;test_out;0
+126.753;6;DriverSatellite1;;{state=SENDING, sigma=1.24855}
+127.494;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+127.494;5;DriverSatellite2;test_out;1
+127.494;5;DriverSatellite2;;{state=SENDING, sigma=0.952853}
+127.753;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+127.753;4;ODU1;signal_out;0
+127.753;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+128.002;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+128.002;6;DriverSatellite1;test_out;1
+128.002;6;DriverSatellite1;;{state=SENDING, sigma=3.51322}
+128.253;2;IDU;idu_out;0
+128.253;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+128.447;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+128.447;5;DriverSatellite2;test_out;0
+128.447;5;DriverSatellite2;;{state=SENDING, sigma=6.14059}
+130.002;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+130.002;4;ODU1;signal_out;1
+130.002;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+130.447;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+130.447;3;ODU2;signal_out;1
+130.447;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+131.447;2;IDU;idu_out;1
+131.447;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+131.515;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+131.515;6;DriverSatellite1;test_out;0
+131.515;6;DriverSatellite1;;{state=SENDING, sigma=3.65958}
+132.515;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+132.515;4;ODU1;signal_out;0
+132.515;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+133.015;2;IDU;idu_out;0
+133.015;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+134.588;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+134.588;5;DriverSatellite2;test_out;1
+134.588;5;DriverSatellite2;;{state=SENDING, sigma=5.11332}
+135.174;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+135.174;6;DriverSatellite1;test_out;1
+135.174;6;DriverSatellite1;;{state=SENDING, sigma=0.450582}
+135.625;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+135.625;6;DriverSatellite1;test_out;0
+135.625;6;DriverSatellite1;;{state=SENDING, sigma=3.81502}
+137.625;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+137.625;4;ODU1;signal_out;1
+137.625;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+138.625;2;IDU;idu_out;1
+138.625;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+139.44;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+139.44;6;DriverSatellite1;test_out;1
+139.44;6;DriverSatellite1;;{state=SENDING, sigma=0.19904}
+139.639;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+139.639;6;DriverSatellite1;test_out;0
+139.639;6;DriverSatellite1;;{state=SENDING, sigma=0.637931}
+139.701;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+139.701;5;DriverSatellite2;test_out;0
+139.701;5;DriverSatellite2;;{state=SENDING, sigma=3.25585}
+140.277;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+140.277;6;DriverSatellite1;test_out;1
+140.277;6;DriverSatellite1;;{state=SENDING, sigma=7.12616}
+140.701;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+140.701;3;ODU2;signal_out;0
+140.701;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+141.277;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+141.277;4;ODU1;signal_out;0
+141.277;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+141.777;2;IDU;idu_out;0
+141.777;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+142.957;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+142.957;5;DriverSatellite2;test_out;1
+142.957;5;DriverSatellite2;;{state=SENDING, sigma=6.76854}
+144.957;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+144.957;3;ODU2;signal_out;1
+144.957;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+145.957;2;IDU;idu_out;1
+145.957;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+147.403;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+147.403;6;DriverSatellite1;test_out;0
+147.403;6;DriverSatellite1;;{state=SENDING, sigma=7.95249}
+149.725;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+149.725;5;DriverSatellite2;test_out;0
+149.725;5;DriverSatellite2;;{state=SENDING, sigma=3.29416}
+150.725;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+150.725;3;ODU2;signal_out;0
+150.725;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+151.225;2;IDU;idu_out;0
+151.225;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+153.02;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+153.02;5;DriverSatellite2;test_out;1
+153.02;5;DriverSatellite2;;{state=SENDING, sigma=0.808348}
+153.828;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+153.828;5;DriverSatellite2;test_out;0
+153.828;5;DriverSatellite2;;{state=SENDING, sigma=7.54143}
+155.356;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+155.356;6;DriverSatellite1;test_out;1
+155.356;6;DriverSatellite1;;{state=SENDING, sigma=7.30266}
+155.828;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+155.828;3;ODU2;signal_out;1
+155.828;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+156.828;2;IDU;idu_out;1
+156.828;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+157.356;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+157.356;4;ODU1;signal_out;1
+157.356;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+161.369;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+161.369;5;DriverSatellite2;test_out;1
+161.369;5;DriverSatellite2;;{state=SENDING, sigma=1.91947}
+162.658;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+162.658;6;DriverSatellite1;test_out;0
+162.658;6;DriverSatellite1;;{state=SENDING, sigma=3.96001}
+163.289;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+163.289;5;DriverSatellite2;test_out;0
+163.289;5;DriverSatellite2;;{state=SENDING, sigma=6.90932}
+163.658;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+163.658;4;ODU1;signal_out;0
+163.658;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+164.289;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+164.289;3;ODU2;signal_out;0
+164.289;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+164.789;2;IDU;idu_out;0
+164.789;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+166.618;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+166.618;6;DriverSatellite1;test_out;1
+166.618;6;DriverSatellite1;;{state=SENDING, sigma=6.99926}
+168.618;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+168.618;4;ODU1;signal_out;1
+168.618;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+169.618;2;IDU;idu_out;1
+169.618;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+170.198;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+170.198;5;DriverSatellite2;test_out;1
+170.198;5;DriverSatellite2;;{state=SENDING, sigma=1.5253}
+171.723;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+171.723;5;DriverSatellite2;test_out;0
+171.723;5;DriverSatellite2;;{state=SENDING, sigma=6.06146}
+173.618;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+173.618;6;DriverSatellite1;test_out;0
+173.618;6;DriverSatellite1;;{state=SENDING, sigma=3.57093}
+173.723;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+173.723;3;ODU2;signal_out;1
+173.723;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+174.618;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+174.618;4;ODU1;signal_out;0
+174.618;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+177.188;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+177.188;6;DriverSatellite1;test_out;1
+177.188;6;DriverSatellite1;;{state=SENDING, sigma=7.65611}
+177.785;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+177.785;5;DriverSatellite2;test_out;1
+177.785;5;DriverSatellite2;;{state=SENDING, sigma=5.51939}
+179.188;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+179.188;4;ODU1;signal_out;1
+179.188;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+183.304;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+183.304;5;DriverSatellite2;test_out;0
+183.304;5;DriverSatellite2;;{state=SENDING, sigma=5.8919}
+184.304;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+184.304;3;ODU2;signal_out;0
+184.304;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+184.845;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+184.845;6;DriverSatellite1;test_out;0
+184.845;6;DriverSatellite1;;{state=SENDING, sigma=5.21658}
+185.845;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+185.845;4;ODU1;signal_out;0
+185.845;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+186.345;2;IDU;idu_out;0
+186.345;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+189.196;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+189.196;5;DriverSatellite2;test_out;1
+189.196;5;DriverSatellite2;;{state=SENDING, sigma=1.09754}
+190.061;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+190.061;6;DriverSatellite1;test_out;1
+190.061;6;DriverSatellite1;;{state=SENDING, sigma=7.00428}
+190.294;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+190.294;5;DriverSatellite2;test_out;0
+190.294;5;DriverSatellite2;;{state=SENDING, sigma=6.13632}
+192.061;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+192.061;4;ODU1;signal_out;1
+192.061;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+192.294;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+192.294;3;ODU2;signal_out;1
+192.294;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+193.294;2;IDU;idu_out;1
+193.294;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+196.43;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+196.43;5;DriverSatellite2;test_out;1
+196.43;5;DriverSatellite2;;{state=SENDING, sigma=2.45417}
+197.065;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+197.065;6;DriverSatellite1;test_out;0
+197.065;6;DriverSatellite1;;{state=SENDING, sigma=6.64292}
+198.065;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+198.065;4;ODU1;signal_out;0
+198.065;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+198.565;2;IDU;idu_out;0
+198.565;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+198.884;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+198.884;5;DriverSatellite2;test_out;0
+198.884;5;DriverSatellite2;;{state=SENDING, sigma=2.4696}
+199.884;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+199.884;3;ODU2;signal_out;0
+199.884;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+201.354;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+201.354;5;DriverSatellite2;test_out;1
+201.354;5;DriverSatellite2;;{state=SENDING, sigma=2.83876}
+203.354;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=0, chain2_up=1}
+203.354;3;ODU2;signal_out;1
+203.354;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+203.708;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+203.708;6;DriverSatellite1;test_out;1
+203.708;6;DriverSatellite1;;{state=SENDING, sigma=7.25957}
+204.193;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+204.193;5;DriverSatellite2;test_out;0
+204.193;5;DriverSatellite2;;{state=SENDING, sigma=5.65219}
+204.354;2;IDU;idu_out;1
+204.354;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+205.193;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+205.193;3;ODU2;signal_out;0
+205.193;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+205.693;2;IDU;idu_out;0
+205.693;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+205.708;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+205.708;4;ODU1;signal_out;1
+205.708;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+206.708;2;IDU;idu_out;1
+206.708;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+209.845;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+209.845;5;DriverSatellite2;test_out;1
+209.845;5;DriverSatellite2;;{state=SENDING, sigma=7.7191}
+210.968;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+210.968;6;DriverSatellite1;test_out;0
+210.968;6;DriverSatellite1;;{state=SENDING, sigma=7.5755}
+211.845;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+211.845;3;ODU2;signal_out;1
+211.845;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+211.968;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=0, chain2_up=1}
+211.968;4;ODU1;signal_out;0
+211.968;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+217.564;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+217.564;5;DriverSatellite2;test_out;0
+217.564;5;DriverSatellite2;;{state=SENDING, sigma=5.56461}
+218.543;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+218.543;6;DriverSatellite1;test_out;1
+218.543;6;DriverSatellite1;;{state=SENDING, sigma=7.62785}
+218.564;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+218.564;3;ODU2;signal_out;0
+218.564;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+219.064;2;IDU;idu_out;0
+219.064;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+220.543;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+220.543;4;ODU1;signal_out;1
+220.543;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+221.543;2;IDU;idu_out;1
+221.543;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+223.129;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+223.129;5;DriverSatellite2;test_out;1
+223.129;5;DriverSatellite2;;{state=SENDING, sigma=2.3447}
+225.129;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+225.129;3;ODU2;signal_out;1
+225.129;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+225.473;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+225.473;5;DriverSatellite2;test_out;0
+225.473;5;DriverSatellite2;;{state=SENDING, sigma=5.4212}
+226.171;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+226.171;6;DriverSatellite1;test_out;0
+226.171;6;DriverSatellite1;;{state=SENDING, sigma=1.70114}
+226.473;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+226.473;3;ODU2;signal_out;0
+226.473;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+227.171;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+227.171;4;ODU1;signal_out;0
+227.171;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+227.671;2;IDU;idu_out;0
+227.671;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+227.872;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+227.872;6;DriverSatellite1;test_out;1
+227.872;6;DriverSatellite1;;{state=SENDING, sigma=6.69474}
+229.872;2;IDU;;{state=CONNECTING, sigma=inf, chain1_up=1, chain2_up=0}
+229.872;4;ODU1;signal_out;1
+229.872;4;ODU1;;{state=TX_RX, sigma=inf, lock=1}
+230.872;2;IDU;idu_out;1
+230.872;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+230.894;3;ODU2;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+230.894;5;DriverSatellite2;test_out;1
+230.894;5;DriverSatellite2;;{state=SENDING, sigma=3.08004}
+232.894;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=1}
+232.894;3;ODU2;signal_out;1
+232.894;3;ODU2;;{state=TX_RX, sigma=inf, lock=1}
+233.974;3;ODU2;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+233.974;5;DriverSatellite2;test_out;0
+233.974;5;DriverSatellite2;;{state=SENDING, sigma=7.21086}
+234.567;4;ODU1;;{state=RELEASE_LOCK, sigma=inf, lock=0}
+234.567;6;DriverSatellite1;test_out;0
+234.567;6;DriverSatellite1;;{state=SENDING, sigma=4.31715}
+234.974;2;IDU;;{state=MOD_DEMOD, sigma=inf, chain1_up=1, chain2_up=0}
+234.974;3;ODU2;signal_out;0
+234.974;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+235.567;2;IDU;;{state=DISCONNECTING, sigma=inf, chain1_up=0, chain2_up=0}
+235.567;4;ODU1;signal_out;0
+235.567;4;ODU1;;{state=PASSIVE, sigma=inf, lock=0}
+236.067;2;IDU;idu_out;0
+236.067;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+238.884;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+238.884;6;DriverSatellite1;test_out;1
+238.884;6;DriverSatellite1;;{state=SENDING, sigma=3.17851}
+238.884;2;IDU;;{state=PASSIVE, sigma=inf, chain1_up=0, chain2_up=0}
+238.884;3;ODU2;;{state=PASSIVE, sigma=inf, lock=0}
+238.884;4;ODU1;;{state=ACQUIRE_LOCK, sigma=inf, lock=1}
+238.884;5;DriverSatellite2;;{state=SENDING, sigma=7.21086}
+238.884;6;DriverSatellite1;;{state=SENDING, sigma=3.17851}
