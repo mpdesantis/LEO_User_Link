@@ -22,10 +22,6 @@ This repository's contents.
 * `doc/`
     - Directory containing documentation for this repository.
         1. Report: `LEO_User_Link.pdf`
-        2. Assignment Document: `assignment1-DEVS.pdf`
-        3. Cadmium V2 Developer Manual: `cadmium-v2-developer-manual.pdf`
-        4. Cadmium V2 Installation Manual: `cadmium-v2-installation-manual.pdf`
-        5. DEVS Graphs Manual: `devs-graphs-manual.pdf`
 * `env.sh`
     - Shell script defining additional environment variables for this repository.
 * `main/`
